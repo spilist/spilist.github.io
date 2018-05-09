@@ -5,7 +5,7 @@ tags: 기술뉴스
 
 ### UI/UX
 
-- [(번역) 더 나은 Form Design을 위해](https://brunch.co.kr/@blackindigo-red/2) ([원문 링크](https://uxdesign.cc/design-better-forms-96fadca0f49c)): 입력 폼을 디자인할 때 흔히 하는 실수들과, 그걸 어떻게 고칠 수 있는지 보여주는 글이다. debatable한 걸 제외하고 나름대로 정리해보면 다음과 같다.
+- [(번역) 더 나은 Form Design을 위해](https://brunch.co.kr/@blackindigo-red/2) ([원문 링크](https://uxdesign.cc/design-better-forms-96fadca0f49c)): 입력 폼을 디자인할 때 흔히 하는 실수들과, 그걸 어떻게 고칠 수 있는지 보여주는 글이다. 요약 정리하면 다음과 같다.
   - **좌우 대신 위아래로**
     - 폭로 짧다고 여러 column으로 폼을 만들지 말라. 유저가 위에서 아래로 자연스럽게 이동하려고 하는 모멘텀을 방해한다.
     - 폼의 레이블을 입력 옆에 두지 말고 위에 두어라. 단, 위아래 길이가 짧아짐으로써 입력이 한 눈에 들어오게 해서 얻는 이득이 크다면 옆에 두는 것을 고려해보라.
@@ -25,7 +25,7 @@ tags: 기술뉴스
 
 
 
-- [더 나은 데이터 테이블을 위해](https://uxdesign.cc/design-better-data-tables-4ecc99d23356): 위 글을 시리즈 격으로 보인다. 성공적인 데이터 테이블 UI의 요소들에 대해 말해준다. 특별히 번역이 필요없이 제목과 첨부된 gif만 봐도 이해가 된다. 테이블에 어떤 기능들이 있을 때 유용한지 정리해보면 다음과 같다.
+- [더 나은 데이터 테이블을 위해](https://uxdesign.cc/design-better-data-tables-4ecc99d23356): 위 글의 시리즈 격으로 보인다. 성공적인 데이터 테이블 UI의 요소들에 대해, 어떤 기능들이 어떨 때 말해준다. 특별히 번역이 필요없이 제목과 첨부된 gif만 봐도 이해가 된다. 요약 정리하면 다음과 같다.
 
   - **고정시키기**
 
