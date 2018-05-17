@@ -12,7 +12,7 @@ Malte Ubl의 Designing very large (JavaScript) applications(https://medium.com/@
 
 이 글은 호주 JSConf에서의 내 발표 스크립트를 약간 편집한 것이다. [유투브에서 전체 발표를 볼 수 있다](https://www.youtube.com/watch?v=ZZmUwXEiPm4).
 
-![img](https://cdn-images-1.medium.com/max/1600/1*DqvlkOgHSKmp5Tu1eX5mdw.png)
+![img](https://cdn-images-1.medium.com/max/1600/1*DqvlkOgHSKmp5Tu1eX5mdw.png)*저는 아주 거대한 자바스크립트 앱을 구축해왔습니다.*
 
 안녕하십니까. 저는 아주 거대한 자바스크립트 앱을 구축해왔습니다. 이젠 이런 일을 더이상 하지 않기 때문에, 제가 해온 일을 돌아보면서 무엇을 배웠는지 공유할 좋은 타이밍이라고 생각했습니다. 
 
@@ -22,7 +22,7 @@ Malte Ubl의 Designing very large (JavaScript) applications(https://medium.com/@
 
 
 
-![img](https://cdn-images-1.medium.com/max/1600/1*v0r4OVf-RXr9ePakdmv5LQ.png)
+![img](https://cdn-images-1.medium.com/max/1600/1*v0r4OVf-RXr9ePakdmv5LQ.png)*저는 React가 좋다고 생각했습니다.*
 
 이 자바스크립트 프레임워크는 오픈소스가 아닙니다. 그 이유는, 이 프레임워크가 React랑 비슷한 때에 나왔고, 제가 "사람들이 선택할 만한 자바스크립트 프레임워크를 또 늘릴 필요가 정말 있을까?"라고 생각했기 때문입니다. 구글은 이미 오픈 소스 자바스크립트 프로젝트를 몇 개 내놓은 상태였고(Angular와 Polymer), 또 하나가 추가되면 사람들이 혼란을 겪으리라 생각했기에, 그냥 우리끼리만 가지고 있자고 결정했습니다. 
 
@@ -42,4 +42,50 @@ Malte Ubl의 Designing very large (JavaScript) applications(https://medium.com/@
 
 
 
-![img](https://cdn-images-1.medium.com/max/1600/1*fzb42X35lNGmkQHhJLhEBQ.png)
+![img](https://cdn-images-1.medium.com/max/1600/1*fzb42X35lNGmkQHhJLhEBQ.png)*트윗: 주니어 엔지니어가 없는 시니어 엔지니어 팀은 그냥 엔지니어 팀과 같다.*
+
+이 자리에서 얘기하고 싶은 또 다른 주제는 커리어입니다. 여기 계신 많은 분들은 스스로가 시니어 엔지니어라고 생각하고 계실 겁니다. 또는, 아직 은 시니어가 안 됐지만 되기를 원하고 있겠죠. 
+
+저는 시니어가 된다는 것의 의미를, 제게 주어지는 거의 모든 문제를 해결할 수 있는 능력이 있는 것으로 생각합니다. 적절한 도구와, 적절한 도메인 지식을 알고 있으니까요. 그리고 또 하나의 중요한 의미는, 주니어 엔지니어가 언젠가 시니어가 될 수 있도록 돕는 것입니다.
+
+
+
+![img](https://cdn-images-1.medium.com/max/1600/1*xpRJ1dXHMlFq1V4oDKU__w.png)*주니어 -> 시니어 -> 그 다음은?*
+
+하지만 어느 순간에 우리는 "그럼 그 다음 단계는 뭐지?" 하고 의문을 가지게 됩니다. 시니어가 되고 나면 그 다음은 어디로 가야 할까요? 누군가는 '관리자'라고 대답하겠지만 그게 모두에게 적절한 답은 아닙니다. 모든 사람이 관리자가 될 순 없으니까요. 어떤 사람들은 정말 훌륭한 엔지니어인데, 여생동안 엔지니어로서 일하는 게 안될 게 뭡니까?
+
+
+
+![img](https://cdn-images-1.medium.com/max/1600/1*wL5wiTWICj1keue9YZOAhQ.png)*'나'는 '내'가 어떻게 문제를 풀어야 할지 안다.*
+
+저는 시니어의 다음 단계로 가는 길을 제시하고자 합니다. 저는 시니어 엔지니어로서 "나는 내가 어떻게 문제를 풀어야 할지 안다"고 당당히 말할 수 있습니다. 그리고, 제가 어떻게 문제를 풀지 알기 때문에, 저는 다른 사람이 어떻게 문제를 풀지 가르쳐줄 수도 있습니다.
+
+
+
+![img](https://cdn-images-1.medium.com/max/1600/1*UyLoKH7y54JAYigVlwCJpQ.png)*'나'는 '다른 사람이' 어떻게 문제를 풀어야 할지 안다.*
+
+따라서 제가 생각하는 시니어 다음 단계는, 스스로 "나는 *다른 사람*이 어떻게 문제를 풀어야 할지 안다"고 당당히 말할 수 있는 것입니다.
+
+
+
+![img](https://cdn-images-1.medium.com/max/1600/1*zBBGLRIZw94gp54pspvx-g.png)*나는 API의 선택과 추상화가 다른 사람이 문제를 푸는 데 어떤 영향을 미칠지 예상할 수 있다.*
+
+조금 더 구체적으로 말해보면 이렇습니다. "나는 내가 선택하는 API 또는 내가 프로젝트에 도입한 추상화가, 다른 사람이 문제를 푸는 데 어떤 영향을 미칠지 예상할 수 있다." 저는 이 문장이 내 선택이 앱에 어떤 영향을 미칠 것인지 생각해보게 하는 강력한 개념이 된다고 생각합니다.
+
+
+
+![img](https://cdn-images-1.medium.com/max/1600/1*LnDv6Ry0Hq2MaQEARaD8rg.png)*공감하며 앱 만들기.*
+
+이걸 '공감하며 앱 만들기' 라고 부를 수도 있습니다. 당신의 행동 하나하나와 당신이 다른 개발자에게 주는 API 하나하나가, 그들이 소프트웨어를 개발하는 데 어떤 영향을 미칠 것인지 생각해보는 것입니다.
+
+
+
+![img](https://cdn-images-1.medium.com/max/1600/1*pnYiZTAfQqsbeS7kVkLe_g.png)*쉬운 수준의 공감.*
+
+다행히 이런 공감은 쉬운 수준에 속합니다. 공감하는 건 일반적으로 어렵고, 공감하며 앱 만들기도 결코 쉽진 않습니다. 하지만 당신히 공감해야 할 사람들은 적어도 소프트웨어 엔지니어일 것입니다. 그들이 당신과 많은 점이 다르더라도 모두 소프트웨어를 개발한다는 공통점이 있습니다. 당신이 경험을 쌓으면 쌓을수록 이런 공감은 더 잘 할 수 있게 됩니다.
+
+
+
+![img](https://cdn-images-1.medium.com/max/1600/1*Op0wLWIqwZ-A5iSuWrqtKA.png)*프로그래밍 모델.*
+
+공감에 대해 생각할 때 제가 이야기하고 싶은 아주 중요한 주제는 '프로그래밍 모델'입니다. 프로그래밍 모델은 "API, 라이브러리, 프레임워크, 도구 등 주어진 조건 하에서 사람들이 어떻게 소프트웨어를 개발하는가"를 뜻합니다. 사실 이 발표는 API와 기타 등등에 준 조그마한 변화가 프로그래밍 모델에 어떤 영향을 끼치는지에 대한 이야기입니다.
