@@ -26,6 +26,8 @@ tags: [JavaScript, React, Prettier, ESLint, StyleLint]
   - 팀에 적용하기.
     - package.json 커맨드로 만들기. https://yarnpkg.com/lang/en/docs/cli/run/
     - 전체 auto fix를 돌리고, 모두의 에디터에 linter와 prettier 설치하게 하기.
+    - auto format on save때, 특정 구문에서 깨지는 문제가 있다. 이유는 정확히 모르겠는데 eslint —fix할 때도 괜찮고 prettier —write 할 때도 괜찮은데 둘을 같이 돌려서 그럴 수도 있다.
+    - prettier-atom의 ESLint integration을 끄니까 괜찮다.
 
 
 
