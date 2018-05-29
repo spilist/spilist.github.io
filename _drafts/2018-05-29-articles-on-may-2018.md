@@ -27,5 +27,5 @@ title: "5월에 읽은 / 공부한 글들"
 
 월 초에 의욕이 넘쳐서 읽는 것들을 많이 번역했는데 우연히도 거의 디자인 쪽이었다.
 
-- [더 나은 Form Design을 위해](https://uxdesign.cc/design-better-forms-96fadca0f49c): 입력 폼을 디자인할 때 흔히 하는 실수들과, 그걸 어떻게 고칠 수 있는지 보여주는 유용한 글이다. 블로그에 요약 번역했다.
+- [더 나은 Form Design을 위해](https://uxdesign.cc/design-better-forms-96fadca0f49c): 입력 폼을 디자인할 때 흔히 하는 실수들과, 그걸 어떻게 고칠 수 있는지 보여주는 유용한 글이다. 블로그에 [요약 번역](https://spilist.github.io/2018/05/08/design-better-forms.html)했다.
 

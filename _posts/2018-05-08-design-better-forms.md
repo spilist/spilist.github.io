@@ -30,6 +30,6 @@ tags: ["Design", "UX", "Product Design", "Usability", "Interaction Design"]
 
 ### 생각하기
 
-- 입력 필드의길이는 유용한 힌트가 된다. Zip 코드나 전화번호 등 길이가 정해져있는 필드는 그에 맞는 길이를 사용하는 게 사용자에게 어포던스를 줄 수 있다.![img](https://cdn-images-1.medium.com/max/2000/1*3rOjyzcj68Dm7badROWuxg.jpeg)
+- 입력 필드의 길이는 유용한 힌트가 된다. Zip 코드나 전화번호 등 길이가 정해져있는 필드는 그에 맞는 길이를 사용하는 게 사용자에게 어포던스를 줄 수 있다.![img](https://cdn-images-1.medium.com/max/2000/1*3rOjyzcj68Dm7badROWuxg.jpeg)
 - 필수 입력 필드가 아니라면 다른 수단으로 그 데이터를 추론하거나, 입력받기를 미루거나, 아니면 아예 안받을 수는 없는지 생각해보라. 요즘은 SNS 등 정보를 가져올 수 있는 출처도 많다.
 - 인생은 짧고 누구도 입력하기를 좋아하지 않는다. 대화형으로, 재미있게, 점진적으로 입력하게 하라. 유저를 (즐겁게) 놀라게 만들고, 브랜드를 드러내라.
