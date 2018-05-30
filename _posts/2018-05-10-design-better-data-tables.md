@@ -1,5 +1,5 @@
 ---
-title: 더 나은 데이터 테이블 디자인을 위해
+title: "(번역) 더 나은 데이터 테이블 디자인을 위해"
 tags: ["UX", "Product Design", "Data Science", "UI", "Design"]
 ---
 
