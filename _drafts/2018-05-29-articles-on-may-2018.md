@@ -1,5 +1,6 @@
 ---
 title: "5월에 읽은 / 공부한 글들"
+tags: ["Readings"]
 ---
 
 회사 위치가 바뀌면서 출퇴근 시간이 80분 가량으로 늘었다. 원래 좀 멍하니 보냈던 이 시간동안 폰으로 글을 읽기 시작했더니 꽤 많은 글을 읽게 됐다. 그동안의 패턴을 보니 읽을 글은 대략 이런 경로를 통해 얻는다.
@@ -27,5 +28,15 @@ title: "5월에 읽은 / 공부한 글들"
 
 월 초에 의욕이 넘쳐서 읽는 것들을 많이 번역했는데 우연히도 거의 디자인 쪽이었다.
 
-- [더 나은 Form Design을 위해](https://uxdesign.cc/design-better-forms-96fadca0f49c): 입력 폼을 디자인할 때 흔히 하는 실수들과, 그걸 어떻게 고칠 수 있는지 보여주는 유용한 글이다. 블로그에 [요약 번역](https://spilist.github.io/2018/05/08/design-better-forms.html)했다.
+- [더 나은 폼 디자인을 위해](https://uxdesign.cc/design-better-forms-96fadca0f49c): 입력 폼을 디자인할 때 흔히 하는 실수들과, 그걸 어떻게 고칠 수 있는지 보여주는 글이다. 블로그에 [요약 번역](https://spilist.github.io/2018/05/08/design-better-forms.html)했다.
+- [더 나은 데이터 테이블 디자인을 위해](https://uxdesign.cc/design-better-data-tables-4ecc99d23356): 성공적인 데이터 테이블 UI의 요소들에 대해, 어떤 기능들이 어떨 때 필요한지 보여주는 글이다. 블로그에 [요약 번역](https://spilist.github.io/2018/05/10/design-better-data-tables.html)했다.
 
+### CSS
+
+- [미래를 향한 스크롤](https://evilmartians.com/chronicles/scroll-to-the-future-modern-javascript-css-scrolling-implementations): 스크롤과 관련된 여러가지 기능들은 대부분 ‘모든 브라우저에서 잘 작동’하게 하기 위해 자바스크립트로 작성되어 왔다. 한편 웹의 스탠다드는 빠르게 발전하고 있으며, 최신 CSS와 DOM API가 새 버전의 브라우저들에 지원되면서 자바스크립트로 만들어진 이런 기능들이 더 간편한 코드로, 더 좋은 성능으로 대체될 수 있는 가능성이 생겼다. (글이 작성된 시점인 2018년 4월 12일 기준으로) 어떤 기능들은 브라우저에서 바로 지원되고 어떤 기능들은 polyfill을 써야만 지원되지만, 적어도 자바스크립트로 모든 기능을 구현하는 게 유일한 해답이 아니라는 것은 확실하다. 어떤 예시들이 있는지 블로그에 [요약 번역](https://spilist.github.io/2018/05/11/scroll-to-the-future.html)했다.
+
+### JavaScript
+
+**실행 컨텍스트와 scope**
+
+- 
