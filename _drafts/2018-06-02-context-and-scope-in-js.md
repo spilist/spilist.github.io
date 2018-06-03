@@ -124,4 +124,45 @@ tags: ["JavaScript", "Context", "Scope", "Performance Optimization"]
     - 컨텍스트 생성 시 컨텍스트 안에 **변수객체**(**arguments, variable), scope chain, this**가 생성된다.
     - 컨텍스트 생성 후 함수가 실행되는데, 사용되는 변수들은 변수 객체 안에서 값을 찾고, 없다면 스코프 체인을 따라 올라가며 찾는다.
     - 클로저를 제외하면, 함수 실행이 마무리되면 해당 컨텍스트는 사라진다. 마찬가지로, 페이지가 종료되면 전역 컨텍스트가 사라진다.
-  - 
+  - 호이스팅(hoisting): 변수를 선언하고 초기화했을 때, 선언 부분이 최상단으로 끌어올려지는 것.
+    - 변수와 함수는 선언만 하면 호이스팅된다. 
+    - 따라서 코드에서 변수 선언 이전에 변수에 접근하면 에러(null reference)가 아니라, 단순히 값이 아직 초기화되지 않은 변수에 접근했기 때문에 undefined reference가 된다.
+    - 함수는 `function FUNC() { ... }` 식으로 선언하면 코드에서 선언한 곳 이전에서도 쓸 수 있다.
+    - 하지만 `let FUNC_VAR = function FUNC() { ... }` 와 같이 함수를 선언해서 바로 변수에 대입하는 형식으로 하면, 호이스팅은 FUNC_VAR에 대해서만 되고, 대입은 나중에 일어나기 때문에 선언한 곳 이전에서 쓰면 함수로서 실행할 수 없다.
+  - 클로저(closure): 비공개 변수, 즉 '클로저 함수 내부에 생성한 변수도 아니고 매개변수도 아닌 변수'를 가진 함수.
+    - 장점: 비공개 변수. 모듈로 배포했을 때 사용자의 잘못된 행동을 막을 수 있다.
+    - 단점: 성능과 메모리. 비공개 변수는 자바스크립트에서 언제 메모리 관리를 해야할 지 모른다. 또한 스코프 체인을 거슬러 올라가기 때문에 좀 느리다.
+
+[MDN doc - Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures): 클로저에 대해 조금 더 자세히 알고싶어서 읽어봤다.
+
+- 정의는 "A *closure* is the combination of a function and the lexical environment within which that function was declared." 위 강의에서와는 느낌이 다르다.
+
+- 다시 한번 내용을 읽으면서 뜯어보니 이해가 간다. lexical scoping으로 인해, 함수가 선언시에 접근할 수 있었던 컨텍스트를 그대로 들고 오는 형태다.
+
+- 함수를 리턴하는 함수(function factory)인 `makeAdder` 의 예시를 보자.
+
+  ```javascript
+  function makeAdder(x) {
+    return function(y) {
+      return x + y;
+    };
+  }
+  
+  var add5 = makeAdder(5);
+  var add10 = makeAdder(10);
+  
+  console.log(add5(2));  // 7
+  console.log(add10(2)); // 12
+  ```
+
+  `add5` 와 `add10` 은 둘 다 클로저다. 같은 함수 정의, 그리고 다른 lexical 환경을 가졌다. 
+
+- 위와 비슷하게, 이벤트 핸들러를 리턴하는 함수를 이용하여 argument에 맞는 핸들링을 하게 하는 게 클로저의 실용적 사용 예 중 하나다.
+
+- 또 다른 실용적 예는 제로초 블로그에서 나왔던 것처럼 private method를 emulate할 수 있게 하는 것이다(모듈 패턴). private method도 컨텍스트 안에 들어있으니까 가능하다.
+
+- for 루프를 `var i` 와 함께 쓸 때 클로저를 쓰지 않으면 컨텍스트가 의도치 않게 바깥쪽에 바인딩될 수 있다.
+
+  - ES2015에서는 var 대신 `let` 을 쓰면 block 안에서 컨텍스트가 잡힌다.
+  - 또는 `for` 대신 `forEach` 를 쓰면 된다.
+
