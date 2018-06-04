@@ -3,7 +3,7 @@ title: "자바스크립트 실행 컨텍스트와 스코프"
 tags: ["JavaScript", "Context", "Scope", "Performance Optimization"]
 ---
 
-함수 bind 하는 것을 잊어서 에러가 나는 경우도 많고, React에서 bind를 어떻게 하느냐가 성능에 영향을 준다는 말도 많이 봐서 이것저것 읽어보며 정리했다.
+React에서 이벤트 핸들러를 bind 하는 것을 잊어서 에러가 나는 경우도 종종 있고, React에서 bind를 어떻게 하느냐가 성능에 영향을 준다는 말도 많이 봐서 이것저것 읽어보며 정리했다.
 
 ---
 
@@ -58,7 +58,7 @@ tags: ["JavaScript", "Context", "Scope", "Performance Optimization"]
     });
     ```
 
-  - 그런데 이 안에서 다시 함수를 정의해서 쓰면 this가 window가 된다. 이를 막으려면 ES6의 => 로 함수를 정의하면 된다. 화살표 함수는 상위 함수의 this에 bind된다.
+  - 그런데 이 안에서 다시 함수를 정의해서 쓰면 this가 window가 된다. 이를 막으려면 ES6의 => 로 함수를 정의하면 된다. 화살표 함수는 상위 함수의 this에 bind된다. 이를 lexical scoping이라고 한다.
 
     ```
     $('div').on('click', function() {
@@ -133,9 +133,11 @@ tags: ["JavaScript", "Context", "Scope", "Performance Optimization"]
     - 장점: 비공개 변수. 모듈로 배포했을 때 사용자의 잘못된 행동을 막을 수 있다.
     - 단점: 성능과 메모리. 비공개 변수는 자바스크립트에서 언제 메모리 관리를 해야할 지 모른다. 또한 스코프 체인을 거슬러 올라가기 때문에 좀 느리다.
 
+
+
 [MDN doc - Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures): 클로저에 대해 조금 더 자세히 알고싶어서 읽어봤다.
 
-- 정의는 "A *closure* is the combination of a function and the lexical environment within which that function was declared." 위 강의에서와는 느낌이 다르다.
+- 정의는 "A *closure* is the combination of a function and the lexical environment within which that function was declared." 위 강의에서와는 느낌이 조금 다르다.
 
 - 다시 한번 내용을 읽으면서 뜯어보니 이해가 간다. lexical scoping으로 인해, 함수가 선언시에 접근할 수 있었던 컨텍스트를 그대로 들고 오는 형태다.
 
@@ -166,3 +168,49 @@ tags: ["JavaScript", "Context", "Scope", "Performance Optimization"]
   - ES2015에서는 var 대신 `let` 을 쓰면 block 안에서 컨텍스트가 잡힌다.
   - 또는 `for` 대신 `forEach` 를 쓰면 된다.
 
+
+
+React에서 이벤트 핸들러를 binding하는 문제
+
+- [This is why we need to bind event handlers in Class Components in React](https://medium.freecodecamp.org/this-is-why-we-need-to-bind-event-handlers-in-class-components-in-react-f7ea1a6f93eb)
+
+  - 기본 원리는 위 강좌에서 나온, 자바스크립트에서 context에 대한 이야기와 같다.
+
+  - React에서 이벤트 핸들러를 bind하지 않은 채 render()에서 호출하면 `this` context가 undefined가 된다.
+
+    - component instance에 bind 되지 않는 이유는 원래 자바스크립트에서 context binding 원리가 그런 것이고..
+    - undefined, [자바스크립트 클래스 문서](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)에 따르면 class delaration과 class expression은 [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) 에서 실행되기 때문이다. 이는 constructor, static methods, prototype methods, getter, setter를 포함한다. 여기서 strict mode에서 실행된다 함은 context에서  `this`를 찾을 수 없을 때 global object로 가는 대신 undefined를 반환한다는 뜻.
+    - this와 binding에 대해서 더 자세한 것은 [여기](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch2.md#lexical-this)를 참고.
+
+  - React에서 이벤트 핸들러를 bind하는 세 가지 방법: constructor, [(experimental) public class field](https://babeljs.io/docs/plugins/transform-class-properties/), [arrow function in the callback](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+
+    ```react
+    class Foo extends React.Component {
+      // bind in constructor
+      constructor(props){
+        this.handleClick = this.handleClick.bind(this);
+      }
+        
+      // public class field (not standard yet, babel transpiles it)
+      handleClick2 = () => {}
+        
+      // arrow function in callback
+      render() {
+        return (
+           <button type="button" onClick={e => this.handleClick3(e)}>
+            Click Me
+          </button>
+        )          
+      }
+    }
+    ```
+
+  - 아래의 두 케이스는 모두 ES6의 arrow function을 사용하는데, arrow function에서 `this` 는 lexically bound된다. 즉 자신을 감싸는 함수의 스코프를 가져온다.
+
+    - public class field는 babel로 transpile되면  `Foo` class의 constructor 안에 들어가면서 Foo의 component instance에 bind된다.
+    - 그리고 `render()` 는 React가 component instance의 context에서 호출하므로, render() 안쪽에 있는 arrow function은 마찬가지로 Foo의 component instance에 bind된다.
+
+그러면 이 세 가지 방법 중에서는 무엇이 좋을까?
+
+- [The best way to bind event handlers in React](https://medium.freecodecamp.org/the-best-way-to-bind-event-handlers-in-react-282db2cf1530)
+- [React, 인라인 함수, 그리고 성능](https://medium.com/steady-study/번역-react-인라인-함수-그리고-성능-9aef85552f2b)
