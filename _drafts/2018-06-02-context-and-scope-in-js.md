@@ -182,35 +182,93 @@ React에서 이벤트 핸들러를 binding하는 문제
     - undefined, [자바스크립트 클래스 문서](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)에 따르면 class delaration과 class expression은 [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode) 에서 실행되기 때문이다. 이는 constructor, static methods, prototype methods, getter, setter를 포함한다. 여기서 strict mode에서 실행된다 함은 context에서  `this`를 찾을 수 없을 때 global object로 가는 대신 undefined를 반환한다는 뜻.
     - this와 binding에 대해서 더 자세한 것은 [여기](https://github.com/getify/You-Dont-Know-JS/blob/master/this%20%26%20object%20prototypes/ch2.md#lexical-this)를 참고.
 
-  - React에서 이벤트 핸들러를 bind하는 세 가지 방법: constructor, [(experimental) public class field](https://babeljs.io/docs/plugins/transform-class-properties/), [arrow function in the callback](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
+  - React에서 이벤트 핸들러를 bind하는 방법은 여러가지가 있다: constructor, [(experimental) public class property](https://babeljs.io/docs/plugins/transform-class-properties/), [arrow function in the callback](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
     ```react
     class Foo extends React.Component {
       // bind in constructor
       constructor(props){
-        this.handleClick = this.handleClick.bind(this);
+        this.handleClick1 = this.handleClick1.bind(this);
       }
         
-      // public class field (not standard yet, babel transpiles it)
+      // public class property (not standard yet, babel transpiles it)
       handleClick2 = () => {}
         
-      // arrow function in callback
       render() {
-        return (
-           <button type="button" onClick={e => this.handleClick3(e)}>
-            Click Me
+        // arrow function in callback
+        const button1 = (
+          <button type="button" onClick={e => this.handleClick3(e)}>
+            Click Me1
           </button>
-        )          
+        );
+        
+        // (원문에는 안나왔지만) dynamic and explicit binding
+        const button2 = (
+          <button type="button" onClick={this.handleClick4.bind(this)}>
+            Click Me2
+          </button>
+        );
+        return (
+          <div>
+            {button1}
+            {button2}
+          </div>
+        );          
       }
     }
     ```
 
-  - 아래의 두 케이스는 모두 ES6의 arrow function을 사용하는데, arrow function에서 `this` 는 lexically bound된다. 즉 자신을 감싸는 함수의 스코프를 가져온다.
+  - handleClick 2와 3은 ES6의 arrow function을 사용하는데, arrow function에서 `this` 는 lexically bound된다. 즉 자신을 감싸는 함수의 스코프를 가져온다.
 
-    - public class field는 babel로 transpile되면  `Foo` class의 constructor 안에 들어가면서 Foo의 component instance에 bind된다.
+    - public class property는 babel로 transpile되면  `Foo` class의 constructor 안에 들어가서 실행된다. 따라서 Foo의 component instance에 bind된다.
     - 그리고 `render()` 는 React가 component instance의 context에서 호출하므로, render() 안쪽에 있는 arrow function은 마찬가지로 Foo의 component instance에 bind된다.
 
-그러면 이 세 가지 방법 중에서는 무엇이 좋을까?
+  - 반면에 render에서 직접 .bind를 호출하는 방식은 scoping과는 상관없이, constructor에서처럼 강제 binding을 시키는 것이다.
+
+그러면 이 bind 방법 중에서는 무엇이 좋을까?
 
 - [The best way to bind event handlers in React](https://medium.freecodecamp.org/the-best-way-to-bind-event-handlers-in-react-282db2cf1530)
-- [React, 인라인 함수, 그리고 성능](https://medium.com/steady-study/번역-react-인라인-함수-그리고-성능-9aef85552f2b)
+
+  - **dynamic binding in render()**
+
+    ```react
+    class HelloWorld extends Component {
+      handleClick(event) {}
+      render() {
+        return (
+          <p>Hello, {this.state.name}!</p>
+          <button onClick={this.handleClick.bind(this)}>Click</button>
+        );
+      }
+    }
+    ```
+
+    이 방식으로 하면 render()가 불릴 때마다 `this.handleClick.bind(this)` 가 새로운 함수를 만들어내기 때문에 button의 onClick 속성이 매번 달라진다. 그래서 render될 때마다 쓸데없이 이 녀석도 다시 render되게 된다.
+
+    - render()에서 () => 로 bind할 때도 문제는 같다.
+
+  - **bind in constructor**: constructor에서 한 번만 bind해두면 위와 같은 일은 없다. button의 나머지 속성이 변하지 않는 한 다시 render되지 않는다.
+
+  - **class property**: 아직 standard 는 아니지만, 더 코드를 작성하기도 쉽고 이해하기도 쉬우면서 constructor에서 bind한 것과 거의 같은 효과다.
+
+    ```react
+    class HelloWorld extends Component {
+      handleClick = (event) => {
+        console.log(this.state.name);
+      }
+      // is equivalent to
+      constructor() {
+        this.handleClick = (event) => { ... }；
+      }
+     
+      render() {
+        return (<button onClick={this.handleClick}/>)
+      }
+    }
+    ```
+
+  - 이 글의 결론: 성능과 가독성 양쪽 측면에서 class property를 활용하는 게 좋다.
+
+- [React, 인라인 함수, 그리고 성능](https://medium.com/steady-study/번역-react-인라인-함수-그리고-성능-9aef85552f2b): 그런데 위 글은 주장을 단순화하기 위해서인지 근거가 좀 빈약하다. 예전에 번역한 이 글을 보면 약간 이야기가 다르다.
+
+  - 
