@@ -168,6 +168,34 @@ React에서 이벤트 핸들러를 bind 하는 것을 잊어서 에러가 나는
   - ES2015에서는 var 대신 `let` 을 쓰면 block 안에서 컨텍스트가 잡힌다.
   - 또는 `for` 대신 `forEach` 를 쓰면 된다.
 
+근데 ES6에서 상황이 변함
+
+- const와 let https://www.zerocho.com/category/EcmaScript/post/5757d74345041aaae7493479
+- object https://www.zerocho.com/category/EcmaScript/post/5757feea4bd934472a2ee52c
+- 함수 https://www.zerocho.com/category/EcmaScript/post/5759abc132522e883c6f6dda
+- 템플릿 스트링 https://www.zerocho.com/category/EcmaScript/post/5759b3a732522e883c6f6ddb
+- 클래스 https://www.zerocho.com/category/EcmaScript/post/5759cd68b15f881700c32592
+- 객체 비구조화 https://www.zerocho.com/category/EcmaScript/post/575d20a97d96d81700508ccd
+- for of (for in은 key로 순환, for of는 value로 순환)https://www.zerocho.com/category/EcmaScript/post/575d4ea816eb22d05a7dc675
+- Map, Set. Map은 유용하겠다. https://www.zerocho.com/category/EcmaScript/post/576cad515eb04d4c1aa35077
+- 반복기와 생성기 https://www.zerocho.com/category/EcmaScript/post/579b34e3062e76a002648af5
+- 모듈 https://www.zerocho.com/category/EcmaScript/post/579dca4054bae71500727ab9
+- Proxy https://www.zerocho.com/category/EcmaScript/post/57ca5f053316f61500c4f902 -> babel 로 못씀. 그때까지 무시하자.
+- Reflect https://www.zerocho.com/category/EcmaScript/post/57ce7fec2a00e600151f085c
+- Symbol https://www.zerocho.com/category/EcmaScript/post/58ef98a6177375001892f891
+- 템플릿 리터럴 https://www.zerocho.com/category/EcmaScript/post/5aa7ecc772adcb001b2ed6f3
+
+ES7
+
+- 다른건 다 단순한 변화고.. async/await https://www.zerocho.com/category/EcmaScript/post/58d142d8e6cda10018195f5a
+- stage-2 https://www.zerocho.com/category/EcmaScript/post/5911b1983b87740018a06b0e decorator, static class field
+
+ES9
+
+- https://www.zerocho.com/category/EcmaScript/post/5adae68aca91b1001b14dd29
+
+
+
 
 
 React에서 이벤트 핸들러를 binding하는 문제
@@ -272,3 +300,35 @@ React에서 이벤트 핸들러를 binding하는 문제
 - [React, 인라인 함수, 그리고 성능](https://medium.com/steady-study/번역-react-인라인-함수-그리고-성능-9aef85552f2b): 그런데 위 글은 주장을 단순화하기 위해서인지 근거가 좀 빈약하다. 예전에 번역한 이 글을 보면 약간 이야기가 다르다.
 
   - 
+
+
+
+
+
+- 프론트엔드 스킬, 특히 자바스크립트 '공부'에 대한 글이 많다. 그만큼 많은 사람이 가이드를 제시하려고 한다.
+  - 모아보면 꽤 되겠다.
+  - https://medium.freecodecamp.org/a-study-plan-to-cure-javascript-fatigue-8ad3a54f2eb1
+- https://textslashplain.com/2018/02/14/understanding-the-limitations-of-https/
+- https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525
+- https://medium.freecodecamp.org/service-workers-the-little-heroes-behind-progressive-web-apps-431cc22d0f16
+- react ref에 대한 이해
+  - ref에 대해 좀 더 이해했다. 
+  - render() 뒤에 didMount가 불리기 때문에, ref든 getElementById든 didMount에서 호출해서 다뤄야 한다.
+  - Stateless function components cannot be given refs
+    - https://github.com/facebook/react/issues/10831
+- babel
+  - https://babeljs.io/docs/usage/babelrc/
+- exports에 대한 이해
+- react stateless components
+  - https://hackernoon.com/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc
+  - http://www.benmvp.com/learning-es6-classes/
+  - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+    - class를 이름 없이 만들 수 있구나. 함수니까 당연하다. babel playground 덕에 좀더 잘 이해했다. https://babeljs.io/repl/
+- jest 스냅샷 테스팅에 대해
+  - https://facebook.github.io/jest/blog/2016/07/27/jest-14.html
+  - http://randycoulman.com/blog/2016/09/06/snapshot-testing-use-with-care/
+  - https://benmccormick.org/2016/09/19/testing-with-jest-snapshots-first-impressions/
+- jekyll 블로그
+  - https://isme2n.github.io/devlog/2017/03/09/Blog-Jekyll-theme/
+  - http://blog.jeonghwan.net/2016/02/29/jekyll-tag.html
+- https://medium.com/javascript-scene/top-javascript-libraries-tech-to-learn-in-2018-c38028e028e6
