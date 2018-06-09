@@ -3,7 +3,7 @@ title: "2018년 5월, 읽고 공부한 것들"
 tags: ["Readings"]
 ---
 
-회사 위치가 바뀌면서 출퇴근 시간이 80분 가량으로 늘었다. 원래 좀 멍하니 보냈던 이 시간동안 폰으로 글을 읽기 시작했더니 꽤 많은 글을 읽게 됐다. React와 자바스크립트에 대한 글도 상당히 많이 읽었지만 그것들은 가능하면 개별적인 글로 정리하기로 하고, 나머지 중 기록해둘 만한 글들을 정리해본다.
+회사 위치가 바뀌면서 출퇴근 시간이 80분 가량으로 늘었다. 원래 좀 멍하니 보냈던 이 시간동안 폰으로 글을 읽기 시작했더니 꽤 많은 글을 읽게 됐다. React와 자바스크립트에 대한 글도 상당히 많이 읽었지만 기술적인 내용들은 가능하면 개별적인 글로 정리하기로 하고, 나머지 중 기록해둘 만한 글들을 정리해본다.
 
 ### 글이 내게 오는 과정
 
@@ -29,21 +29,29 @@ tags: ["Readings"]
 ### 개발문화/철학
 
 - [Hype driven development](<https://blog.daftcode.pl/hype-driven-development-3469fc2e9b22>): 새롭거나 유명한 기술이 현재 자신과 팀의 상황에 맞는지에 대한 고찰과 분석 없이 도입되는 것을 경고하는 재밌는 글이다. 읽고 나서 번역하려고 했더니 '설레발 주도 개발'이라는 아주 멋진 제목으로 [번역된 글](https://lazygyu.net/blog/hype_driven_development)이 있었다. 
-- [리모트 근무는 실화고 사무실은 먹는 것](https://medium.com/@sybae/리모트-근무는-실화고-사무실은-먹는것-0편-65d9aa8dced1): [세일즈부스트](https://medium.com/@blaswan/salesboost-recruit-2c1248aa394a)라는 기업에서 슬랙 봇 서비스인 [StandupPly](https://standuply.com/)를 이용해서 어떻게 원격 근무 환경에서 효과적으로 컨텍스트를 공유하는지에 대한 글이다. 자율적인 원격 근무는 직원 입장에서 아주 훌륭한 근무형태로 여겨지지만, 실제로 실행해 보면 특히 암묵적 의사소통의 부재로 인한 문제가 꽤 심각하다. 최근 우리 팀도 이런 문제를 느껴 해결책을 고심하고 있었는데 여기서 소개된 슬랙 봇을 테스트해볼 예정이다.
+- [리모트 근무는 실화고 사무실은 먹는 것](https://medium.com/@sybae/리모트-근무는-실화고-사무실은-먹는것-0편-65d9aa8dced1): [세일즈부스트](https://medium.com/@blaswan/salesboost-recruit-2c1248aa394a)라는 기업에서 슬랙 봇 서비스인 [Standuply](https://standuply.com/)를 이용해서 어떻게 원격 근무 환경에서 효과적으로 컨텍스트를 공유하는지에 대한 글이다. 자율적인 원격 근무는 직원 입장에서 아주 훌륭한 근무형태로 여겨지지만, 실제로 실행해 보면 특히 암묵적 의사소통의 부재로 인한 문제가 꽤 심각하다. 최근 우리 팀도 이런 문제를 느껴 해결책을 고심하고 있었는데 여기서 소개된 슬랙 봇을 테스트해볼 예정이다.
 - [Designing very large (JavaScript) applications](https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3): 구글에서 오래 프론트엔드 개발자로 일했던 [Malte Ubi](https://medium.com/@cramforce?source=post_header_lockup) 가 거대한 앱을 구축할 때 고려해야 할 점들에 대해 발표한 글이다. 원문은 컨퍼런스 발표 스크립트의 거의 무편집 버전이라, 구조화도 잘 안 되어있고 몇몇 부분은 이해하기 쉽지 않았지만 충분히 좋은 인사이트를 주는 좋은 글이었다. 고생해서 블로그에 [전문 번역](https://medium.com/steady-study/번역-아주-거대한-자바스크립트-어플리케이션을-구축하기-3aa37fc45122)했다.
 - [인간답게 코드 리뷰하기](https://www.slideshare.net/codetemplate/2018-01code-review-95601233): 코드리뷰가 어려운 이유, 그리고 코드리뷰를 효과적으로 하는 8가지 방법에 대한 글([1부](https://mtlynch.io/human-code-reviews-1/), [2부](https://mtlynch.io/human-code-reviews-2/))이 정리된 슬라이드다. 개발팀에서 코드 리뷰가 잘 이뤄지지 않고 있다면 특히 추천.
 
-### 좋은 개발자 되기 / 채용
+### 좋은 개발자 되기
 
 - [I interviewed at five top companies in Silicon Valley in five days, and luckily got five job offers](https://medium.com/@XiaohanZeng/i-interviewed-at-five-top-companies-in-silicon-valley-in-five-days-and-luckily-got-five-job-offers-25178cf74e0f)
 - [Things I wish someone had told me about working inside a scaling company](https://slackhq.com/things-i-wish-someone-had-told-me-about-working-inside-a-scaling-company-e148ff7c3718)
 - [The Mistakes I Made As a Beginner Programmer](https://medium.com/@samerbuna/the-mistakes-i-made-as-a-beginner-programmer-ac8b3e54c312)
 - [Front-end development is like figure skating, it rewards to be more technical than artistic](https://medium.com/@jerrylowm/front-end-development-is-like-figure-skating-it-rewards-to-be-more-technical-than-artistic-784323079131)
 - [The death of “front-end developers”](https://medium.com/@jerrylowm/the-death-of-front-end-developers-803a95e0f411)
+- [제로 스펙에 가까웠던 듣보잡 개발자의 유명 IT 기업 도전기](http://jojoldu.tistory.com/280) 
+- http://youngrok.com/QuickAndDirty
+- http://youngrok.com/프로그래머에게%20필요한%20피드백
+
+###채용과 면접
+
+- [knowre의 개발자 인터뷰](http://blog.kivol.net/post/138587457933/우리-회사의-개발자-인터뷰): 
+- [좋은 기술 인터뷰 질문은 어떤 질문인가](http://blog.kivol.net/post/173442457743/좋은-기술-인터뷰-질문은-어떤-질문인가)
 - [개발자 채용 시 기술실력 검증 어떻게 해야 하나](https://brunch.co.kr/@leehosung/47)
 - [개발자 채용 어떻게 해야하나?](https://wonderer80.github.io/2018/04/12/개발자-채용-어떻게-해야하나/)
-- [좋은 기술 인터뷰 질문은 어떤 질문인가](http://blog.kivol.net/post/173442457743/좋은-기술-인터뷰-질문은-어떤-질문인가)
-- [제로 스펙에 가까웠던 듣보잡 개발자의 유명 IT 기업 도전기](http://jojoldu.tistory.com/280) 
+
+
 
 ### UI/UX 디자인, CSS
 
@@ -62,7 +70,7 @@ tags: ["Readings"]
 
 ### 함수형 프로그래밍
 
-- [Goodbye, Object Oriented Programming](https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53): 객체 지향 프로그래밍의 장점으로 꼽히는 상속(inheritance), 캡슐화(encapsulation), 다형성(polymorphism)이 복잡한 어플리케이션에서 어떤 문제를 가지고 있는지 보여주고, 결론적으로 함수형 프로그래밍 쓰라는 영업글이다. OOP 단점이 재밌게 드러나긴 했으나 이런 방식의 글을 좋아하진 않는다. 모든 도구는 상황에 맞는 쓰임새가 있는 건데 이런 글은 '무조건 OOP가 구리고 FP가 좋다'는 식으로 말하니까. 모든 상황에 들어맞는 유일한 베스트 솔루션은 없다. [No silver bullet](http://www.cs.nott.ac.uk/~pszcah/G51ISS/Documents/NoSilverBullet.html)이 생각난다.
+- [Goodbye, Object Oriented Programming](https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53): 객체 지향 프로그래밍의 장점으로 꼽히는 상속(inheritance), 캡슐화(encapsulation), 다형성(polymorphism)이 복잡한 어플리케이션에서 어떤 문제를 가지고 있는지 보여주고, 결론적으로 함수형 프로그래밍 쓰라는 영업글이다. OOP 단점이 잘 드러나긴 했으나, 내용과 무관하게 이런 형식의 글을 좋아하진 않는다. 모든 도구는 상황에 맞는 쓰임새가 있는 건데 이런 글은 '무조건 OOP가 구리고 FP가 좋다'는 식으로 생각하게 유도하는 느낌이라서다. 모든 상황에 들어맞는 유일한 베스트 솔루션은 없다. [No silver bullet](http://www.cs.nott.ac.uk/~pszcah/G51ISS/Documents/NoSilverBullet.html)이 생각난다.
 - [Learning functional programming and compositional software techniques in JavaScript ES6+ 시리즈](https://medium.com/javascript-scene/composing-software-an-introduction-27b72500d6ea): 
 
 ### 블록체인
