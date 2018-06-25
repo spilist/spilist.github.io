@@ -102,7 +102,7 @@ tags: ["Software Development", "Debugging", "Problem Solving"]
 
 ![debugging-on-debug-footer]({{ "/images/debugging-on-debug-footer.gif" | absolute_url }})
 
-*로그아웃을 통한 유저 이탈도 막고 고객센터 문의도 줄이는 것에 성공한 디자인.*
+*로그아웃과 고객센터 문의를 줄이는 대신 유저의 스트레스를 늘린 디자인.*
 
 ### 4. 환경 개선 ###
 
