@@ -1,6 +1,6 @@
 ---
-title: [정리] Debug it! 실용주의 디버깅
-tag: ["Readings", "Debug", "Software Development"]
+title: "[정리] Debug it! 실용주의 디버깅"
+tags: ["Readings", "Debug", "Software Development"]
 ---
 
 [Debug It! 실용주의 디버깅](http://www.acornpub.co.kr/book/debug-it) (원제: [Debug It!: Find, Repair, and Prevent Bugs in Your Code](https://www.amazon.com/Debug-Repair-Prevent-Pragmatic-Programmers/dp/193435628X))을 읽고 주요한 부분을 발췌 요약한다.
