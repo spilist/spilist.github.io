@@ -6,7 +6,11 @@ permalink: /about/portfolio
 
 **배휘동** | bae.hwidong@gmail.com| [Medium Blog](https://medium.com/steady-study) | [LinkedIn](https://linkedin.com/in/hwidongbae) | [GitHub](http://github.com/spilist)
 
-### 맞춤 세무사 찾기 (2018 년 4 월)
+
+
+<br>
+
+### 맞춤 세무사 찾기 (2018년 4월)
 
 [한국신용데이터](http://kcd.co.kr/)에서 의뢰받아 외주로 만든, [캐시노트](http://cashnote.kr/)에 연결된 세무대리인을 지역/관심업종 기반으로 검색하고 연결하는 모바일 웹 서비스. [사이트 링크](https://tax.cashnote.kr/)
 
@@ -15,7 +19,9 @@ permalink: /about/portfolio
 * 엘리스에 낸 병가가 끝나기 전 개발의 감을 회복하려고 시작했는데, 기획과 스펙이 아주 깔끔하여 8 일만에 완성되었다. 훌륭한 기획자가 있는 팀은 이렇게나 다르다는 걸 느꼈다. 생산성 높게 진행되어 서로 만족한 프로젝트였다.
   ![image-20180714234348052]({{ "portfolio/image-20180714234348052.png" | absolute_url }} )
 
-### Elice (2016 년 말 ~ 현재)
+<br>
+
+### Elice (2016년 말 ~ 현재)
 
 웹 프론트엔드 팀 리더로 일했다.
 
@@ -45,7 +51,9 @@ permalink: /about/portfolio
 
   ![image-20180714234704826]({{ "portfolio/image-20180714234704826.png" | absolute_url }} )
 
-### Cultureland-OCR (2016 년 가을)
+<br>
+
+### Cultureland-OCR (2016년 가을)
 
 모바일 컬처랜드 문화상품권 번호 추출 쉘 스크립트. [Gist 링크](https://gist.github.com/spilist/4dfa257e81bcef84a1320d4b4197b9ce)
 
@@ -54,7 +62,9 @@ permalink: /about/portfolio
 * 이미지가 있는 디렉토리에서 실행하면 `번호 추출 + 개발자 콘솔에서 번호 입력하는 코드 생성 + 추출 끝난 이미지 옮기기` 를 해주는 쉘 스크립트를 개발하여 사내에 배포했다.
 * 결과적으로 몇 시간 걸리던 작업을 몇 분만에 해결할 수 있게 만들었지만 쉘 스크립트와 개발자 콘솔이라는 장벽이 커서였는지, 개발팀 이외에는 별로 사용하지 않아서 아쉬웠다.
 
-### [NBT](http://nbt.com/) (2016 년 초 ~ 2016 년 말)
+<br>
+
+### [NBT](http://nbt.com/) (2016년 초 ~ 2016년 말)
 
 서버 엔지니어로 일하면서 백엔드 API 와 웹 프론트 뷰를 개발하고, 서버 성능을 향상시켰다.
 
@@ -66,7 +76,9 @@ permalink: /about/portfolio
 * 이후 애드네트워크 '애디슨'을 개발하는 팀으로 옮겨 백엔드 API 및 프론트 뷰 웹개발을 했다. 모바일 광고 시스템이 어떤 식으로 돌아가는지 배우고, 로그를 체계적으로 남기고 분석하는 방법에 대해 여러모로 고민했다.
 * NBT 개발팀은 스크럼과 칸반을 비롯한 개발문화와 조직문화를 갖추고 계속 발전시키고자 노력하는 조직이었다. 프로젝트 관리 도구와 협업 도구에 대해 많이 배웠다. 어느 정도 규모가 있는 조직에서 개발자 및 다른 구성원들과 어떻게 협업해야 하는지에 대해서도 많이 경험했다.
 
-### Smashy Toys (2015 년)
+<br>
+
+### Smashy Toys (2015년)
 
 모바일 아케이드 리듬액션 게임. [플레이 스토어 링크](https://play.google.com/store/apps/details?id=com.morogoro.smashytoysspace), [GitHub 링크](https://github.com/spilist/shoong)
 
@@ -76,7 +88,9 @@ permalink: /about/portfolio
 * 안드로이드로 베타 버전을 만들어 출시한 뒤 인디게임답게 유저들의 반응은 없다시피 했고, 번아웃되어있었던 팀은 자연스럽게 와해됐다. 이후 퍼블리셔가 붙어서 게임 홍보를 도와주겠다고 했고, 우리는 재결합해서 게임의 완성도를 높여 iOS 를 포함하여 재출시했다. 그러나 퍼블리셔는 약속과 달리 흐지부지 일을 진행했으며, 우리도 게임을 완성한 것에 만족하며 그렇게 대강 마무리됐다.
   ![image-20180714194058169]({{ "portfolio/image-20180714194058169.png" | absolute_url }} )
 
-### Havit (2014 년 ~ 2015 년)
+<br>
+
+### Havit (2014년 ~ 2015년)
 
 좋은 습관을 만들어 유지하고 싶은 사람들을 연결해줌으로써 서로 격려할 수 있는 SNS. [개인 백업용 사이트 링크](https://havit-personal.herokuapp.com/), [GitHub 링크](https://github.com/spilist/havit)
 
@@ -91,21 +105,25 @@ permalink: /about/portfolio
   ![스크린샷 2018-07-14 오후 7.19.09]({{ "portfolio/스크린샷 2018-07-14 오후 7.19.09.jpg" | absolute_url }} )
 * 작은 팀, 짧은 기간이었지만 스타트업 팀의 대표로서 팀을 운영한다는 것이 어떤 것인지도 살짝 배울 수 있었다.
 
-### CPS Seat Picker (2013 년 3 월)
+<br>
+
+### CPS Seat Picker (2013년 3 월)
 
 연구실 사람들을 위한 랜덤 자리배정 웹 어플리케이션. [GitHub 링크](https://github.com/spilist/cps_seat_picker)
 
 * 연구실에서 주기적으로 자리를 바꿨었는데, 다음 바꿀 시기가 와서 내가 랜덤으로 자리 정해주는 웹사이트를 만들어보겠다고 나섰다.
 * 웹 어플리케이션의 전체 제작 과정을 경험해보고 싶었고, 구상-기획-디자인-구현-배포-홍보-유지보수 까지를 해보자는 마음으로 만들었다.
 * 각 stakeholder 별 요구사항을 정리하고 [Balsamiq](https://balsamiq.com/)으로 UI 디자인을 했다.
-  ![CPS Seat Picker -2013.03.02-](CPS Seat Picker -2013.03.02-.png)
+  ![CPS Seat Picker -2013.03.02-]({{ "portfolio/CPS Seat Picker -2013.03.02-.png" | absolute_url }})
 * 스토리 카드에 필요한 기능을 적고, 작업 크기를 추정하고, 쪼갰다. 기능을 어떻게 구현할지도 같이 적었다.
   ![C670F7B1-CB0B-40BA-AC05-795A5C8C6911]({{ "portfolio/C670F7B1-CB0B-40BA-AC05-795A5C8C6911.png" | absolute_url }} )
   ![84EA9142-05F7-4F2A-A5B9-35A58C025E9F]({{ "portfolio/84EA9142-05F7-4F2A-A5B9-35A58C025E9F.png" | absolute_url }} )
 * PHP 로 프레임워크 없이 웹서버를 세팅하고, jQuery 와 Bootstrap 으로 구현했다.
   ![스크린샷 2013-03-05 오후 8.31.09]({{ "portfolio/스크린샷 2013-03-05 오후 8.31.09.png" | absolute_url }})
 
-### DreamNote (2012 년 ~ 2014 년)
+<br>
+
+### DreamNote (2012년 ~ 2014년)
 
 중고등학교 학생들이 자신의 꿈을 찾고 이뤄나가는 과정을 체계적으로 기록할 수 있는 템플릿 겸 SNS.
 
@@ -116,7 +134,9 @@ permalink: /about/portfolio
 * 여러가지를 시도했었지만 최종적으로는 PHP / [CodeIgniter](https://codeigniter.com/)로 백엔드, jQuery / Boostrap 으로 프론트엔드를 구현했다.
 * 이 때 워낙 jQuery, ajax, CSS 로 삽질을 많이 해서 '내가 원하는 화면을 구현'하는 능력이 많이 길러진 것 같다.
 
-### UseTimeLogger (2011 년 말)
+<br>
+
+### UseTimeLogger (2011년 말)
 
 안드로이드 스마트폰에서 유저의 앱별 사용량을 측정하는 연구용 어플리케이션.
 
@@ -126,7 +146,9 @@ permalink: /about/portfolio
 
   ![image-20180714174815328]({{ "portfolio/image-20180714174815328.png" | absolute_url }} )
 
-### ITOM (2010 년 여름)
+<br>
+
+### ITOM (2010년 여름)
 
 TV 임베디드 운영체제에 들어가는 태스크 최적화 프로그램.
 
