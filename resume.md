@@ -79,7 +79,7 @@ permalink: /about/resume/
 
 - 모바일 아케이드 리듬액션 게임 '[스매시 토이즈](https://play.google.com/store/apps/details?id=com.morogoro.smashytoysspace)'를 기획 및 개발하여 플레이스토어, 앱스토어에 출시 (C# / Unity3d 사용)
 
-**CEO, EverMentors (2014 가을 – 2015 여름)**: 애자일/린 스타트업 방법론을 공부하고 적용해가며 (일일/주간/월간 회고, 일일 배포 등) 개발했다. 훌륭한 경험이었다.
+**CEO, EverMentors (2014 가을 – 2015 여름)**: 애자일/린 스타트업 방법론을 공부하고 적용해가며 (일일/주간/월간 회고, 일일 배포 등) 개발했다.
 
 - '[Havit](https://havit-personal.herokuapp.com/)' 웹 어플리케이션 기획 및 개발 (Ruby / Rails 사용)
 - 서비스 목표: 좋은 습관을 만들어 유지하고 싶은 사람들을 연결해줌으로써 서로 격려할 수 있는 SNS
