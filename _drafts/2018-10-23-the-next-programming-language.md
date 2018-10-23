@@ -1,5 +1,5 @@
 ---
-title: "[번역]당신이 꼭 배워야 하는 프로그래밍 언어"
+title: "[번역]당신이 다음으로 배워야 할 바로 그 프로그래밍 언어"
 tags: ["Software Development", "Programming Language"]
 ---
 
@@ -33,6 +33,35 @@ tags: ["Software Development", "Programming Language"]
 
 인력시장에서 개발자 구인난은 실존합니다. 아마 앞으로 몇년간은 그대로겠죠. 소프트웨어 엔지니어를 찾고 고용하는 일은 무척 어렵습니다. 하지만 진짜 어려운 일은 아주 훌륭한 소프트웨어 엔지니어를 찾는 것이죠. 몇몇 플랫폼이 좀 더 거대한 커뮤니티를 갖고있긴 하나, 이 말은 프로그래밍 언어에 상관없이 사실입니다.
 
-저는 10여년 전 HTML, CSS, Javascript와 PHP로 제 첫번째 웹사이트를 만들었습니다. 
+10여년 전, 저는 HTML, CSS, Javascript와 PHP로 첫번째 웹사이트를 만들었습니다. 웬걸, 그때는 이런 걸로 직업을 가질 수 있으리라고는 상상도 못했죠. 이후 저는 Ruby를 알게 되어 사랑에 빠졌고, Node.js도 배웠습니다. Objective-C로 iOS 앱 만드는 법도 배웠어요(사랑에 빠지진 않았지만 앱은 몇 개 만들었습니다). Go를 알게 되고는 다시 사랑에 빠졌습니다. 요즈음에는 Elixir와 Clojure로 놀고 있고요. 이 글을 쓰고 있는 지금은 온라인 Erlang 교육을 들으며, 제가 지금까지 개발하던 방식과는 완전히 다른 사고방식을 배우며 즐거워하고 있습니다. 아주 재미있어요.
 
-I started playing with HTML, CSS, Javascript and PHP building my first websites about ten years ago. Hell, I even had no idea at that time it was something I could find a job and build a career with. I later discovered Ruby and fell in love with it (and I still do), and I also learned to use Node.js. I learned to build iOS apps with Objective-C (did not fell in love this time, but still built a few apps with it). I discovered Go and fell in love again. More recently, I’ve been playing with Elixir and Clojure. As of today, I’m following an online Erlang course, and I enjoy it because it opens up my mind to a whole new way of programming that I was used to. This is refreshing.
+이렇게 늘어놓자니 여드름 나던 시절 첫키스했던 여자아이로부터 시작해 모든 구여친들의 목록을 만들고있는 것 같네요. 당신이 디즈니랜드에 사는 게 아니라면, 내게 맞는 단 한 사람을 단번에 찾으리라 기대하지는 않을 겁니다. 제가 당신에게 어떤 완벽한 사람을 소개해줄테니 당장 가서 데이트하라고 하면 어떨까요? 저를 믿으시겠어요?
+
+아마 아니겠죠.
+
+연애와 프로그래밍이 다른 점은, 첫 PHP 코드를 짠지 수 년이 지난 지금도 저는 PHP 작업을 즐긴다는 것입니다. 물론 유일하며 신성한 index.php에 작성된 형편없는 코드를 좋아한다는 건 아닙니다. 저는 Symfony, Laravel과 Composer 같은 성숙한 프레임워크와 도구가 있는 생태계를 좋아합니다. 플랫폼이 진화해온 과정을 사랑합니다.
+
+그리고 지나간 연애처럼, 이 언어에 쏟았던 시간들은 오늘날 프로그래머로서의 나를 구성하는 일부분입니다. 제 길에 거쳐간 다른 언어들도 조만간 그런 역할을 할 거고요.
+
+최근 DHH(역자 주: [David Heinemeir Hansson](https://twitter.com/dhh), Rails 창시자)의 RailsConf 세션을 봤습니다. 무척 흥미로운 영상이었지만 몇 군데 동의하기 어려운 주장이 있었습니다.
+
+I agree that the choice of a language or platform is usually made not using a rational and logical process of selection, but rather from a system of beliefs and common values. This is especially true for startup founders who do not necessarily pick their technology stack in the goal of scaling to millions of users right away. So, like a lot of things in life, you choose using what you know, what you experienced, and what you love in a platform, in its values.
+
+The part where I diverge a bit is, I think you do not always fall into one specific community. I might love Ruby for its syntax, community and simplicity, but I don’t want to have classes with dozens of methods and sharing five different responsibilities. I might like the simplicity and the power of Go, but I don’t always agree with the way its creators are pushing idiomatic guidelines, leaving small freedom to users. I was recently amazed by Erlang and Elixir pattern matching (among other features), but I probably won’t use it in a majority of my projects.
+
+However, all these different languages I learned or tried, are now something that I can reflect on, and knowing about them allows me to take better decisions in my work. Because then, I don’t have only one point of view, one answer, from one technology. I have many, and I can take the best from each one I know and understand, and design my choice according to what I learned. Knowing more gives you a broader vision as a programmer, and makes you even better at learning itself new things again.
+
+And this is what you are looking for to improve yourself. Not one technology that you can learn and make millions with for the rest of your life.
+
+Sure, you might, at some point, want to get more expertise in some particular language or platform. And that’s good, because you will have made the choice to go with this particular technology that you love and feel comfortable with. You will look to become an expert in this technology, but with all the good learnings from your previous experiences.
+
+This is true for all languages. In all of them, you will find things you like, and things you dislike. As a person, you can reflect on your past relationships, choices and errors, to learn about yourself.
+
+And, as a software engineer, by discovering and learning different technologies, you will learn more about yourself, and become a better engineer. Your mind will open to change, to new paradigms and new ways of thinking and solving problems. And, in a world where things can change in a matter of months, and when jobs can be very different from one to another, this is always a good thing.
+
+So, don’t limit yourself with PHP if you’re a successful freelance Wordpress developer. Don’t limit yourself to Java even if you know the entire language and its power in and out. Don’t limit yourself to Javascript if you are a front-end engineer, or a WebGL developer. Don’t limit yourself to iOS or Android development. Don’t limit yourself to OO programming, or to functional programming. 
+Don’t lock up yourself in one platform, one idiom, one way of thinking.
+
+Be open-minded, be curious, be a learner, and it will pay off in the long run.
+
+*This* is the next thing you need to learn.
