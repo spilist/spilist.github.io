@@ -6,7 +6,13 @@ permalink: /about/portfolio
 
 **배휘동** | bae.hwidong@gmail.com| [Medium Blog](https://medium.com/steady-study) | [LinkedIn](https://linkedin.com/in/hwidongbae) | [GitHub](http://github.com/spilist)
 
-최종 업데이트: 2018.08.12
+최종 업데이트: 2018.10.23
+
+<br>
+
+### 한국신용데이터 (2018년 가을 ~ 현재)
+
+프로젝트 엔지니어링 리드.
 
 <br>
 
@@ -21,7 +27,7 @@ permalink: /about/portfolio
 
 <br>
 
-### Elice (2016년 말 ~ 현재)
+### Elice (2016년 말 ~ 2018년 가을)
 
 웹 프론트엔드 팀 리더로 일했다.
 

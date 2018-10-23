@@ -6,7 +6,7 @@ permalink: /about/resume/
 
 **배휘동** | bae.hwidong@gmail.com| [Portfolio](https://spilist.github.io/about/portfolio) | [Medium Blog](https://medium.com/steady-study) | [LinkedIn](https://linkedin.com/in/hwidongbae) | [GitHub](http://github.com/spilist)
 
-최종 업데이트: 2018.07.14
+최종 업데이트: 2018.10.23
 
 <br>
 
@@ -64,7 +64,9 @@ permalink: /about/resume/
 
 ### 경력 ###
 
-**프론트엔드 팀 리더, Elice (2016 말 ~ 현재)**: 개발자로서는 나의 프로그래밍 전문성을 웹 프론트엔드, 특히 자바스크립트에 더 집중해서 공부하고 키워냈다. 팀 리더로서는 좋은 조직문화와 개발문화를 만들어내는 것의 어려움을 실감했다. 프로젝트 매니저로서는 릴리즈를 주기적으로 하는 것과 동시에 제품 품질 수준을 유지/향상시키는 것이 무척 어려움을 실감했다. 여러모로 많이 배우고, 또 부족함을 알아가고 있다.
+**프로젝트 엔지니어링 리드, [한국신용데이터](http://kcd.co.kr/) (2018 가을 ~ 현재)**: [캐시노트](https://cashnote.kr/)의 Rails 백엔드와 웹 프론트엔드 개발. 
+
+**프론트엔드 팀 리더, [Elice](https://elice.io/) (2016 말 ~ 2018 가을)**: 개발자로서는 나의 프로그래밍 전문성을 웹 프론트엔드, 특히 자바스크립트에 더 집중해서 공부하고 키워냈다. 팀 리더로서는 좋은 조직문화와 개발문화를 만들어내는 것의 어려움을 실감했다. 프로젝트 매니저로서는 릴리즈를 주기적으로 하는 것과 동시에 제품 품질 수준을 유지/향상시키는 것이 무척 어려움을 실감했다. 여러모로 많이 배우고, 또 부족함을 알아가고 있다.
 
 - 온라인 소프트웨어 교육 플랫폼 '[엘리스](https://academy.elice.io/)'의 제품 기획
 - 엘리스 웹 프론트엔드 부문 개발 총괄 (React / Redux 등 사용)
