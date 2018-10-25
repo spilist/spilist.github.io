@@ -1,5 +1,5 @@
 ---
-title: "[번역]당신이 다음으로 배워야 할 바로 그 프로그래밍 언어"
+title: "[번역]당신이 반드시 배워야 할 바로 그 프로그래밍 언어"
 tags: ["Software Development", "Programming Language"]
 ---
 
@@ -29,7 +29,7 @@ tags: ["Software Development", "Programming Language"]
 
 사실 당신이 집중하기로 선택한 기술 하나 때문에 다음 일자리를 찾지 못하게 될 가능성은 매우 낮습니다. 유일한 예외는 당신이 고른 언어가 매우 좁은 사용처에서만 쓰이거나, 시대에 뒤떨어진 경우입니다(물론 이 경우에도, 여전히 [Fortran 프로그래머를 찾는 곳](https://www.indeed.com/q-Fortran-jobs.html)이 있는 것 같군요).
 
-그러나 저는 이런 고민이 아주 일반적이며 우리 모두가 때로 이 고민에 빠져들게 된다는 걸 인정합니다. 심지어 저조차도, 최근까지도 이런 고민을 합니다. 요즘 인기를 끄는 이 새로운 언어에 시간을 쏟아야 할까? 아니면 내가 좀 더 "진지한" 프로그래머로 보일 만한 이 언어를 선택해야 할까? 이런 고민은 평범한 것입니다. 고민은 인간의 것이니까요. 그리고, 우리의 일이 사실상 컴퓨터에게 속삭이는 것에 비슷한 만큼, 우리 모두는 아직 인간입니다. (*And, as close as our job is to whisper to the ears of computers, we are all still humans.* - 번역이 어려워서 원문을 포함)
+물론 저는 이런 고민이 아주 일반적이며 우리 모두가 때로 이 고민에 빠져들게 된다는 걸 인정합니다. 저도, 최근까지도 이런 고민을 했습니다. 요즘 인기를 끄는 이 새로운 언어에 시간을 쏟아야 할까? 아니면 내가 좀 더 "진지한" 프로그래머로 보일 만한 이 언어를 선택해야 할까? 이런 고민은 다들 하는 겁니다. 고민은 인간의 것이니까요. 그리고, 우리의 일이 사실상 컴퓨터에게 속삭이는 것에 비슷한 만큼, 우리 모두는 아직 인간입니다. (*And, as close as our job is to whisper to the ears of computers, we are all still humans.* - 번역이 어려워서 원문을 포함)
 
 인력시장에서 개발자 구인난은 실존합니다. 아마 앞으로 몇년간은 그대로겠죠. 소프트웨어 엔지니어를 찾고 고용하는 일은 무척 어렵습니다. 하지만 진짜 어려운 일은 아주 훌륭한 소프트웨어 엔지니어를 찾는 것이죠. 몇몇 플랫폼이 좀 더 거대한 커뮤니티를 갖고있긴 하나, 이 말은 프로그래밍 언어에 상관없이 사실입니다.
 
@@ -51,17 +51,16 @@ tags: ["Software Development", "Programming Language"]
 
 그러나 제가 배우거나 시도해온 이 모든 언어들은 제가 반영해볼 수 있는 무언가가 되었고, 제가 작업할 때 더 나은 의사결정을 하도록 도와주고 있습니다. 이는 제가 하나의 기술에서 비롯된 하나의 관점과 하나의 해답만을 가지고 있지 않은 덕분입니다. 저는 제가 알고 이해해온 여러가지 관점 중 가장 현재 상황에 맞는 것을 선택할 수 있습니다. 더 많이 알면 프로그래머로서 더 넓은 시야를 가지게 되며, 새로운 것도 더 쉽게 배울 수 있습니다.
 
-And this is what you are looking for to improve yourself. Not one technology that you can learn and make millions with for the rest of your life.
+그리고 이게 바로 당신이 성장하기 위해 찾아나서야 할 것입니다. 하나 배워서 평생 먹고살 기술을 찾는 게 아니라요.
 
-Sure, you might, at some point, want to get more expertise in some particular language or platform. And that’s good, because you will have made the choice to go with this particular technology that you love and feel comfortable with. You will look to become an expert in this technology, but with all the good learnings from your previous experiences.
+물론 어느 순간에는 특정 언어나 플랫폼에 더 특화된 전문성을 원하게 될지도 모릅니다. 그것도 좋습니다. 당신이 사랑하고 편안하게 느끼는 기술을 연마하기로 선택했을 테고, 그동안의 경험에서 배워온 것들을 활용하여 그 기술의 전문가가 될 테니까요.
 
-This is true for all languages. In all of them, you will find things you like, and things you dislike. As a person, you can reflect on your past relationships, choices and errors, to learn about yourself.
+이는 모든 언어에 통용됩니다. 모든 언어에는 당신이 좋아할 만한 요소와 싫어할 만한 요소가 있을 거예요. 사람은 과거의 인간관계와 선택과 실수로부터 자기 자신을 더 알아가게 됩니다. 소프트웨어 엔지니어도 마찬가지로, 다른 기술을 발견하고 학습하는 과정에서 스스로에 대해 더 많이 알게 되고, 더 나은 엔지니어가 됩니다. 변화와 새 패러다임과 새 사고방식과 새 해결책에 열려있게 됩니다. 몇 달만에 세상이 바뀌어버리는, 그리고 직업의 다양성이 무척 큰 이 시대에서, 변화 수용성은 언제나 바람직합니다.
 
-And, as a software engineer, by discovering and learning different technologies, you will learn more about yourself, and become a better engineer. Your mind will open to change, to new paradigms and new ways of thinking and solving problems. And, in a world where things can change in a matter of months, and when jobs can be very different from one to another, this is always a good thing.
+그러니, 당신이 성공한 프리랜서 워드프레스 개발자라도 스스로를 PHP에 한정짓지는 마세요. Java에 빠삭하더라도 Java만 파지는 마세요. 프론트엔드 엔지니어라도, WebGL 개발자라도 Javascript만 쓰지는 마세요. iOS나 Android 개발 하나만 하지는 마세요. 객체지향 프로그래밍이나 함수형 프로그래밍에 스스로를 한정짓지 마세요.
 
-So, don’t limit yourself with PHP if you’re a successful freelance Wordpress developer. Don’t limit yourself to Java even if you know the entire language and its power in and out. Don’t limit yourself to Javascript if you are a front-end engineer, or a WebGL developer. Don’t limit yourself to iOS or Android development. Don’t limit yourself to OO programming, or to functional programming. 
-Don’t lock up yourself in one platform, one idiom, one way of thinking.
+유일한 플랫폼, 유일한 관념, 유일한 사고방식에 갇히지 마세요.
 
-Be open-minded, be curious, be a learner, and it will pay off in the long run.
+열린 마음과 호기심을 가지고, 배우는 사람이 되면 언젠가 당신에게 큰 보상이 돌아올 겁니다.
 
-*This* is the next thing you need to learn.
+*이것이* 바로 당신이 반드시 배워야 할 무언가입니다.
