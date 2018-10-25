@@ -45,11 +45,11 @@ tags: ["Software Development", "Programming Language"]
 
 최근 DHH(역자 주: [David Heinemeir Hansson](https://twitter.com/dhh), Rails 창시자)의 RailsConf 세션을 봤습니다. 무척 흥미로운 영상이었지만 몇 군데 동의하기 어려운 주장이 있었습니다.
 
-I agree that the choice of a language or platform is usually made not using a rational and logical process of selection, but rather from a system of beliefs and common values. This is especially true for startup founders who do not necessarily pick their technology stack in the goal of scaling to millions of users right away. So, like a lot of things in life, you choose using what you know, what you experienced, and what you love in a platform, in its values.
+저는 언어나 플랫폼의 선택이 항상 이성적이고 논리적인 사고에 의한 것이 아니며, 오히려 특정한 믿음과 가치판단에서 비롯된다는 주장에 동의합니다. 이는 스타트업 창업자들에게 더욱 그러한데, 이들은 수백만 사용자로 바로 스케일업할 수 있는 기술 스택을 골라야만 하는 처지가 아니기 때문입니다. 그래서, 살아오며 선택해온 다른 것들처럼, 그저 당신이 알고, 경험해봤고, 사랑하는 가치를 지닌 것들을 고르게 됩니다.
 
-The part where I diverge a bit is, I think you do not always fall into one specific community. I might love Ruby for its syntax, community and simplicity, but I don’t want to have classes with dozens of methods and sharing five different responsibilities. I might like the simplicity and the power of Go, but I don’t always agree with the way its creators are pushing idiomatic guidelines, leaving small freedom to users. I was recently amazed by Erlang and Elixir pattern matching (among other features), but I probably won’t use it in a majority of my projects.
+다만 저는 DHH와 달리, 누군가가 꼭 특정 커뮤니티 하나에만 속할 필요는 없다고 생각합니다. 제가 Ruby의 문법, 커뮤니티와 단순성을 좋아하는 건 맞지만, 메서드 수십 개와 서로 다른 책임 다섯 개를 가진 클래스를 만들고 싶지는 않습니다. 저는 Go의 단순함과 강력함을 좋아하지만, 특징적인 지침을 강요하여 사용자들에게 자유를 제한하는 방식은 별로 동조하지 않습니다. 최근에는 Erlang과 Elixir 패턴 매칭에 푹 빠졌지만 제 프로젝트 대부분에서 이 언어들을 쓰지는 않을 겁니다.
 
-However, all these different languages I learned or tried, are now something that I can reflect on, and knowing about them allows me to take better decisions in my work. Because then, I don’t have only one point of view, one answer, from one technology. I have many, and I can take the best from each one I know and understand, and design my choice according to what I learned. Knowing more gives you a broader vision as a programmer, and makes you even better at learning itself new things again.
+그러나 제가 배우거나 시도해온 이 모든 언어들은 제가 반영해볼 수 있는 무언가가 되었고, 제가 작업할 때 더 나은 의사결정을 하도록 도와주고 있습니다. 이는 제가 하나의 기술에서 비롯된 하나의 관점과 하나의 해답만을 가지고 있지 않은 덕분입니다. 저는 제가 알고 이해해온 여러가지 관점 중 가장 현재 상황에 맞는 것을 선택할 수 있습니다. 더 많이 알면 프로그래머로서 더 넓은 시야를 가지게 되며, 새로운 것도 더 쉽게 배울 수 있습니다.
 
 And this is what you are looking for to improve yourself. Not one technology that you can learn and make millions with for the rest of your life.
 
