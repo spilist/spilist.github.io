@@ -3,48 +3,50 @@ title: "ruby mixin: include, prepend, extend 그리고 ActiveSupport::Concern"
 tags: ["ruby", "rails", "object-oriented-programming", "mixin"]
 ---
 
+몇년만에 다시 ruby / rails 개발을 하게 되면서, 예전에는 대충만 알고 개발하던 것들을 다시 처음부터 들여다보는 재미가 있다. ruby의 mixin에 대해 파헤쳐본 결과를 공유해본다.
+
 ### Mixin? ###
 
 ruby는 다른 객체지향 언어와 달리 클래스의 다중 상속을 지원하지 않는다. 하지만 `module`의 mixin을 활용하면 다중 상속과 비슷한(또는 더 풍부한) 효과를 낼 수 있다. 어떤 언어에서든 mixin을 지나치게 사용하면 코드를 이해하기 어려워지지만, 잘 사용하면 중복이 줄어들고 깔끔해진다. 
 
-몇년만에 다시 ruby / rails 개발을 하게 되면서, 예전에는 대충만 알고 개발하던 것들을 다시 처음부터 들여다보는 재미가 있다. ruby의 mixin에 대해 파헤쳐본 결과를 공유해본다.
-
 ### Class와 Module ###
 
-먼저 클래스와 모듈이 어떻게 다른지를 알아보자. 클래스는 OOP에서 익숙한데, 모듈은 언제 어떻게 쓰는 걸까? 클래스와 모듈의 차이는 뭘까?
+먼저 클래스와 모듈이 어떻게 다른지 간단히 알아보자. 클래스는 객체 지향 프로그래밍에서 많이 들어본 것인데, 모듈은 언제 어떻게 쓰는 걸까? 클래스와 모듈의 차이는 뭘까? (지금부터 참조하는 모든 ruby 문서는 2.5.0 버전을 기준으로 한다.)
 
-##### Module #####
+##### [Module](https://ruby-doc.org/core-2.5.0/Module.html) #####
 
-Module은 한마디로 '한 네임스페이스 안에 묶인 메서드와 상수의 집합'이라고 할 수 있다. 모듈 안에서 다시 다른 모듈이나 클래스를 nesting해서 정의할 수도 있다.
+모듈은 "한 네임스페이스 안에 묶인 메서드와 상수의 집합"이다. 
 
 ```ruby
 module MyModule
   CONST = "My Const"
 
-  def self.func
-    puts "My func is called"
-  end
-    
-  module NestedModule
-    def self.log
-      puts "Nested log is called"
-    end
+  def self.module_method
+    puts "moule_method is called"
   end
   
-  class NestedClass
-    def log
-      puts "Nested log, instantiated"
-    end
+  def instance_method
+    puts "instance_method is called"
   end
 end
 
 MyModule::CONST # "My Const" 
-MyModule.func # "My func is called"
-MyModule::NestedModule.log # "Nested log is called"
-MyModule::NestedClass.new.log # "Nested log, instantiated"
+MyModule.module_method # "module_method is called"
 ```
 
+모듈의 메서드는 `instance methods` 와 `module methods` 로 나뉜다. 모듈은 클래스와 달리 instanitate될 수 없기 때문에,  `instance methods`는 모듈이 클래스 안에 포함(`include` 또는 `prepend`를 통해)되어야만 사용할 수 있다. 거꾸로, 
+
+A Module is a collection of methods and constants. The methods in a module may be instance methods or module methods. Instance methods appear as methods in a class when the module is included, module methods do not. Conversely, module methods may be called without creating an encapsulating object, while instance methods may not. (See Module#module_function.)
+
 모듈은 클래스와 달리 instantiate될 수 없다. (그러나 object는 존재하는데, 이에 대해 이해하려면 singleton class)
+
+##### [Class](https://ruby-doc.org/core-2.5.0/Class.html) #####
+
+ruby 공식 문서에 나와있는 class의 정의는 다음과 같다.
+
+> Classes in Ruby are first-class objects—each is an instance of class `Class`.
+
+'class'가 한 문장에 네 번이나 나오는데, 번역해보면 "ruby에서 class는 [일급 객체](https://ko.wikipedia.org/wiki/일급_객체)이며, 각 클래스는  `Class` 라는 클래스의 인스턴스이다."라고 할 수 있다. 상당히 재귀적인 정의인데, 이 글에서는 
 
 ### 참고문헌 ###
 
