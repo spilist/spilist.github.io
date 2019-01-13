@@ -3,22 +3,22 @@ title: "ruby mixin: include, prepend, extend 그리고 ActiveSupport::Concern"
 tags: ["ruby", "rails", "object-oriented-programming", "mixin"]
 ---
 
-루비는 다른 객체지향 언어와 달리 클래스의 다중 상속을 지원하지 않는다. 하지만 `module` mixin을 활용하면 다중 상속과 비슷한, 또는 더 풍부한 효과를 낼 수 있다. 어떤 언어에서든 mixin이 지나치면 코드를 이해하기 어려워지지만, 잘 사용하면 중복이 줄어들고 깔끔해진다. *(지금부터 참조하는 모든 루비 문서는 `2.5.0` 버전을 기준으로 한다.)*
+루비는 다른 객체지향 언어와 달리 클래스가 여러 부모로부터 상속받을 수 없다. 하지만 `module` mixin을 활용하면 다중 상속과 비슷한, 또는 더 풍부한 효과를 낼 수 있다. 어떤 언어에서든 mixin이 지나치면 코드를 이해하기 어려워지지만, 잘 사용하면 중복이 줄어들고 깔끔해진다. *(지금부터 참조하는 모든 루비 문서는 `2.5.0` 버전을 기준으로 한다.)*
 
 ### [Module](https://ruby-doc.org/core-2.5.0/Module.html) ###
 
-먼저 모듈에 대해 알아보자. 모듈은 "한 네임스페이스 안에 묶인 메서드와 상수의 집합"이다. 모듈을 만들 때는 `instance methods` 와 `module methods` 를 정의할 수 있다. 모듈은 클래스와 달리 instanitate될 수 없기 때문에,  `instance methods`는 모듈이 다른 클래스 안에 (후술할 `include`, `prepend`, `extend`를 통해) mixin되어야만 사용할 수 있다. 거꾸로, `module methods`는 mixin되어도 사용할 수 없으며, 객체 생성 없이 호출할 수 있다.
+루비의 모듈은 "메서드와 상수의 집합"이다. 모듈은 클래스와 달리 instantiate될 수 없으며, 모듈의 주 목적은 그 안에 정의한 메서드를 다양한 클래스에 `include`, `prepend`, `extend`를 통해 mixin해서 재사용하는 것이다. 이렇게 mixin해서 사용하는 메서드를 `instance methods`라고 부르고, 객체 생성 없이 모듈 자체에서 호출하는 메서드를 `module methods`라고 부른다. `module methods`는 mixin해도 사용할 수 없다.
 
 ```ruby
 module MyModule
   CONST = "My Const"
 
   def self.module_method
-    puts "moule_method is called"
+    "moule_method is called"
   end
   
   def instance_method
-    puts "instance_method is called"
+    "instance_method is called"
   end
 end
 
@@ -29,7 +29,7 @@ MyModule.new.instance_method # NoMethodError (undefined method `new' for MyModul
 
 ### [Ancestor Chains](https://ruby-doc.org/core-2.5.1/Module.html#method-i-ancestors) ###
 
-루비의 mixin을 이해하려면 루비에서 메서드를 호출했을 때 무슨 일이 벌어지는지 이해해야 한다. 루비에서 클래스의 인스턴스에 대한 메서드를 호출하면, `ancestors`라는 목록의 앞쪽에서부터 메서드 정의를 찾아서 실행한다. 이 ancestors는 루비 클래스가 생성될 때 클래스 조상의 목록을 저장해둔 것인데, 목록에는 해당 클래스가 상속받는 모든 클래스, 자기 자신, 그리고 `include`와 `prepend` 를 통해 mixin된 모듈들이 포함된다. 다음 예시를 보자.
+루비 모듈의 mixin이 어떻게 이루어지는지 이해하려면 우선 `ancestors` 에 대해 이해해야 한다. 루비에서는 클래스가 생성될 때 ancestors 배열에 클래스 조상의 목록을 저장해둔다. 이 배열은 해당 클래스가 상속받는 모든 클래스, 자기 자신, 그리고 `include`와 `prepend` 를 통해 mixin된 모듈들이 포함된다. 클래스의 인스턴스 메서드를 호출하면 ancestors 배열의 앞에서부터 메서드 정의를 찾아서 실행한다. 
 
 ```ruby
 String.acenstors # => [String, Comparable, Object, Kernel, BasicObject]
@@ -45,38 +45,67 @@ String.instance_method(:<) # => #<UnboundMethod: String(Comparable)#<>
 String.instance_method(:object_id) # => #<UnboundMethod: String(Kernel)#object_id>
 ```
 
-`upcase` 는 `String` 클래스에, `<` 는 `Comparable` 모듈에, `object_id` 는 `Kernel` 모듈에 정의되어 있다. 클래스인 `String`이 모듈인 `Comparable` 을 상속받는 것처럼 된다는 개념이 생소하긴 하지만 일단 넘어가자. 어쨌든 루비에서는, 자신이 정의하고 있지 않은 메서드는 ancestors 목록의 다음 후보에서 찾는다는 것이 중요하다. 즉, 복수개의 ancestors들이 같은 이름의 메서드를 정의하고 있다면 순서상 앞의 ancestor 클래스에 정의된 메서드를 사용한다.
+`upcase` 는 `String` 클래스에, `<` 는 `Comparable` 모듈에, `object_id` 는 `Kernel` 모듈에 정의되어 있다. 상속 개념과 유사하게, 자신이 정의하고 있지 않은 메서드는 ancestors 목록의 다음 조상에게서 찾는다. 즉 둘 이상의 선조들이 같은 이름의 메서드를 정의하고 있다면 더 가까운 선조에 정의된 메서드를 사용한다. (그리고 BasicObject까지 거슬러 올라갔는데도 찾지 못하면 [BasicObject#method_missing](https://ruby-doc.org/core-2.5.0/BasicObject.html#method-i-method_missing)이 실행된다.)
+
+### [Include](https://ruby-doc.org/core-2.5.0/Module.html#method-i-include)  ###
+
+`include`는 모듈에 정의된 메서드를 클래스에서 활용하는 가장 쉽고 널리 알려진 방법이다. 클래스를 정의할 때 모듈을 include하면, 그 모듈은 ancestors 배열상에서 부모 클래스(`superclass`) 앞에 위치하게 된다. 따라서 include된 모듈에 정의된 메서드가 부모 클래스에서 상속받은 메서드와 이름이 같다면 모듈의 메서드가 호출된다.
 
 ```ruby
-String.instance_method(:==) # => #<UnboundMethod: String#==>
-BasicObject.instance_method(:==) # => #<UnboundMethod: BasicObject#==>
+module MyModule
+  def log
+    "log by MyModule"
+  end
+end
 
-str1 = "foo"
-str1.object_id # => 70264361077420
-str2 = "foo"
-str2.object_id # => 70264369184800
-str1 == str2 # => true
+class BaseClass
+  def log
+    "log by BaseClass"
+  end
+end
+
+class MyClass < BaseClass
+  include MyModule
+end
+
+MyClass.ancestors # => [MyClass, MyModule, BaseClass, Object, Kernel, BasicObject]
+MyClass.instance_method(:log) => #<UnboundMethod: MyClass(MyModule)#log>
+MyClass.new.log # => log by MyModule
 ```
 
-`String`의 조상 중에 `BasicObject`가 있고, `==`는 양쪽에 정의되어 있으며, `str1`과 `str2`는 오브젝트 입장에서는 다르지만 스트링 입장에서는 같다고 볼 수 있다.
+### [Prepend](https://ruby-doc.org/core-2.5.0/Module.html#method-i-prepend) ###
 
+`prepend`는 루비 2.0부터 도입된 mixin으로, include와 아주 유사하게 동작한다. prepend된 모듈은 ancestors 배열상에서 원 클래스의 앞에 위치하게 된다. 메서드 호출은 ancesotrs의 앞에서부터 정의를 찾아나가기 때문에, prepend된 모듈의 메서드는 원 클래스의 메서드보다 우선순위를 가진다. 그리고 여기에 다음 ancestor에서 메서드를 찾는 `super` 키워드를 조합하면, 해당 메서드의 앞이나 뒤에 우리가 원하는 동작을 추가할 수 있다.
 
-##### [Class](https://ruby-doc.org/core-2.5.0/Class.html) #####
+```ruby
+module MyModule
+  def run(args)
+    result = super
+    "run(#{args.inspect}) finished: #{result.inspect}"
+  end
+end
 
-ruby 공식 문서에 나와있는 클래스의 정의는 다음과 같다.
+class MyClass
+  prepend MyModule
+  
+  def run(args)
+    args.sum
+  end
+end
 
-> Classes in Ruby are first-class objects—each is an instance of class `Class`.
+MyClass.ancestors # => [MyModule, MyClass, Object, Kernel, BasicObject]
+MyClass.new.run([1, 2, 3]) # => run([1, 2, 3]) finished: 6
+```
 
-`class`가 한 문장에 네 번이나 나온다. "ruby에서 클래스는 [일급 오브젝트](https://ko.wikipedia.org/wiki/일급_객체)이며, 각 클래스는  `Class` 라는 클래스의 인스턴스이다." 상당히 재귀적인 정의인데, 여기서 `Class`는 우리가 일반적으로 말하는 클래스와 다르다. `Class`, `Module`, `Object`는 모두 ruby에서 `metaclass`라고 불리는데, ruby의 메타 프로그래밍에 대해서는 따로 글을 써볼 계획이다. 
-
-
-
-
+### Extend ###
 
 
 
 ### 참고문헌 ###
 
+- Super
+  - https://medium.com/rubycademy/the-super-keyword-a75b67f46f05
+  - 
 - Ruby Object Model
   - [Seeing Metaclassess Cleary](http://ruby-metaprogramming.rubylearning.com/html/seeingMetaclassesClearly.html) by [why the lucky stiff](https://whytheluckystiff.net/about/)
   - [Understanding Ruby Object Model](https://medium.com/@shubham7/understanding-the-ruby-object-model-685136dd64d9) by [Shubham Saxena](https://medium.com/@shubham7)
