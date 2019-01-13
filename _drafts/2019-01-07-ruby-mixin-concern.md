@@ -75,12 +75,12 @@ MyClass.new.log # => log by MyModule
 
 ### [Prepend](https://ruby-doc.org/core-2.5.0/Module.html#method-i-prepend) ###
 
-`prepend`는 루비 2.0부터 도입된 mixin으로, include와 아주 유사하게 동작한다. prepend된 모듈은 ancestors 배열상에서 원 클래스의 앞에 위치하게 된다. 메서드 호출은 ancesotrs의 앞에서부터 정의를 찾아나가기 때문에, prepend된 모듈의 메서드는 원 클래스의 메서드보다 우선순위를 가진다. 그리고 여기에 다음 ancestor에서 메서드를 찾는 `super` 키워드를 조합하면, 해당 메서드의 앞이나 뒤에 우리가 원하는 동작을 추가할 수 있다.
+`prepend`는 루비 `2.0`부터 도입된 mixin으로, include와 유사하게 동작하나 용도는 다르다. include가 모듈의 메서드를 그대로 사용하기 위함이라면, prepend는 클래스의 기존 메서드를 꾸며주는 역할을 한다. 이게 가능한 이유는, prepend된 모듈이 ancestors 배열상에서 원 클래스의 앞에 위치하기 때문이다. 메서드 호출은 ancesotrs의 앞에서부터 정의를 찾아나가기 때문에, prepend된 모듈의 메서드는 원 클래스의 메서드보다 우선순위를 가진다. 그리고 여기에 다음 ancestor에서 메서드를 찾는 `super` 키워드를 조합하면, 해당 메서드의 앞이나 뒤에 우리가 원하는 동작을 추가할 수 있다.
 
 ```ruby
 module MyModule
   def run(args)
-    result = super
+    result = super # calls MyClass#run
     "run(#{args.inspect}) finished: #{result.inspect}"
   end
 end
@@ -97,7 +97,30 @@ MyClass.ancestors # => [MyModule, MyClass, Object, Kernel, BasicObject]
 MyClass.new.run([1, 2, 3]) # => run([1, 2, 3]) finished: 6
 ```
 
-### Extend ###
+### [Extend](https://ruby-doc.org/core-2.5.0/Module.html#method-i-extend_object) ###
+
+`extend`는 다른 두 mixin과 동작방식이 좀 다르다. include와 prepend는 모두 클래스의 ancestors 배열에 관여하여 클래스의 인스턴스 메서드를 확장시켜주는 개념이었다면, extend는 클래스의 **클래스 메서드**를 확장시켜준다. 
+
+```ruby
+module MyModule
+  def log
+    "log by MyModule"
+  end
+end
+
+class MyClass
+  extend MyModule
+end
+
+MyClass.log # => log by MyModule
+MyClass.ancestors # => [MyClass, Object, Kernel, BasicObject]
+```
+
+그런데 예시에서 보듯이 ancestors는 extend에도 불구하고 변화가 없다. 그러면 extend는 어떻게 모듈의 메서드를 클래스가 접근할 수 있게 해주는 것일까? 아니, 애초에 클래스 메서드는 어떻게 실행되는 것일까?
+
+```ruby
+MyClass.class_methods # NoMethodError (undefined method `class_methods' for MyClass:Class)
+```
 
 
 
