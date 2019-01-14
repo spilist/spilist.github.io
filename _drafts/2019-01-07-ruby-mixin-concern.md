@@ -99,7 +99,7 @@ MyClass.new.run([1, 2, 3]) # => run([1, 2, 3]) finished: 6
 
 ### [Extend](https://ruby-doc.org/core-2.5.0/Module.html#method-i-extend_object) ###
 
-`extend`는 다른 두 mixin과 동작방식이 좀 다르다. include와 prepend는 모두 클래스의 ancestors 배열에 관여하여 클래스의 인스턴스 메서드를 확장시켜주는 개념이었다면, extend는 클래스의 **클래스 메서드**를 확장시켜준다. 
+`extend`는 다른 두 mixin과 동작방식이 좀 다르다. include와 prepend는 모두 클래스의 ancestors 배열에 관여하여 클래스의 인스턴스 메서드를 확장시키는 개념이었다면, extend는 클래스의 **클래스 메서드**를 확장시킨다. 
 
 ```ruby
 module MyModule
@@ -118,9 +118,16 @@ MyClass.ancestors # => [MyClass, Object, Kernel, BasicObject]
 
 그런데 예시에서 보듯이 ancestors는 extend에도 불구하고 변화가 없다. 그러면 extend는 어떻게 모듈의 메서드를 클래스가 접근할 수 있게 해주는 것일까? 아니, 애초에 클래스 메서드는 어떻게 실행되는 것일까?
 
+사실 루비에서 클래스 메서드라는 것은 존재하지 않는다. 루비에서는 모든 것이 오브젝트이고, '클래스'도 다른 무언가의 인스턴스이며, 클래스 메서드도 결국은 인스턴스 메서드이기 때문이다. 이것에 대해 정확히 이해하려면 싱글톤 클래스와 오브젝트 모델에 대해 알아봐야 하는데, 이 글은 거기까지는 다루지 않으려고 한다. 더 자세히 알고 싶으신 분은 **참고** 섹션의 글을 읽어보시길 바란다. 여기서는 "클래스 메서드는 싱글톤 클래스 안에 정의되고, 모듈을 extend하면 싱글톤 클래스가 확장된다"는 것만 기억해 두자.
+
 ```ruby
-MyClass.class_methods # NoMethodError (undefined method `class_methods' for MyClass:Class)
+MyClass.singleton_class # => #<Class:MyClass>
+MyClass.singleton_class.ancestors => [#<Class:MyClass>, MyModule, #<Class:Object>, #<Class:BasicObject>, Class, Module, Object, Kernel, BasicObject]
 ```
+
+위 예시에서 MyClass가 extend한 MyModule이 `MyClass.singleton_class` 의 ancestors로 존재함을 확인할 수 있다. include와 유사하게, 클래스의 싱글톤 클래스 다음에 위치한다. 싱글톤 클래스도 클래스이기 때문에 ancestors의 동작 방식은 원래 클래스와 같다. `MyClass.log`는 먼저 `#<Class:MyClass>`에서 메서드 정의를 찾아보고, 찾을 수 없으면 다음 ancestor인 `MyModule`에서 찾는다.
+
+
 
 
 
