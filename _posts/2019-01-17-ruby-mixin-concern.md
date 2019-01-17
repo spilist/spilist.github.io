@@ -3,7 +3,7 @@ title: "루비 mixin: include, prepend, extend 그리고 Concern"
 tags: ["ruby", "rails", "mixin"]
 ---
 
-루비는 다른 객체지향 언어와 달리 클래스가 여러 부모로부터 상속받을 수 없습니다. 하지만 `module`을 mixin하면 다중 상속과 비슷한, 또는 더 풍부한 효과를 낼 수 있죠. 어떤 언어에서든 mixin이 지나치면 코드를 이해하기 어려워지지만, 잘 사용하면 중복이 줄어들고 깔끔해집니다. 루비에서 mixin을 어떻게 사용하는지, 그리고 레일즈에서 더 편리하게 mixin을 사용할 수 있게 해주는 `ActiveSupport::Concern`에 대해 알아봅시다.
+루비는 다른 객체지향 언어와 달리 클래스가 여러 부모로부터 상속받을 수 없습니다. 하지만 `module`을 mixin하면 다중 상속과 비슷한, 또는 더 풍부한 효과를 낼 수 있죠. 어떤 언어에서든 mixin이 지나치면 코드를 이해하기 어려워지지만, 잘 사용하면 중복이 줄어들고 깔끔해집니다. 루비의 mixin, 그리고 레일즈에서 더 편리하게 mixin을 사용할 수 있게 해주는 `ActiveSupport::Concern`에 대해 알아봅시다.
 
 *(글의 주제에 집중하기 위해 디테일을 많이 생략했습니다. 이 글에서 다루지 않은 부분이 궁금하시다면 **참고문헌** 섹션의 링크들을 읽어보시길 바랍니다.)*
 
@@ -13,7 +13,7 @@ tags: ["ruby", "rails", "mixin"]
 
 #### [Module](https://ruby-doc.org/core-2.5.0/Module.html) ####
 
-루비에서 **모듈**은 "메서드와 상수의 집합"을 뜻합니다. 모듈은 클래스와 달리 instantiate될 수 없으며, 모듈의 주 목적은 그 안에 정의한 메서드를 다양한 클래스에 `include`, `prepend`, `extend`를 통해 mixin해서 재사용하는 것입니다. 이렇게 mixin해서 사용하는 메서드를 `instance methods`라고 부르고, 객체 생성 없이 모듈 자체에서 호출하는 메서드를 `module methods`라고 부릅니다. `module methods`는 mixin해도 사용할 수 없습니다.
+루비에서 **모듈**은 "메서드와 상수의 집합"을 뜻합니다. 모듈은 클래스와 달리 instantiate될 수 없으며, 모듈의 주 목적은 그 안에 정의한 메서드를 다양한 클래스에 `include`, `prepend`, `extend`를 통해 mixin해서 재사용하는 것입니다. 이렇게 mixin해서 사용하는 메서드를 인스턴스 메서드라고 부르고, 객체 생성 없이 모듈 자체에서 호출하는 메서드를 모듈 메서드라고 부릅니다. 모듈 메서드는 mixin해도 사용할 수 없습니다.
 
 ```ruby
 module MyModule
@@ -22,7 +22,7 @@ module MyModule
   def self.module_method
     "moule_method is called"
   end
-  
+
   def instance_method
     "instance_method is called"
   end
@@ -92,19 +92,19 @@ irb > MyClass.new.log
 
 #### [Prepend](https://ruby-doc.org/core-2.5.0/Module.html#method-i-prepend) ####
 
-`prepend`는 루비 `2.0`부터 도입된 mixin으로, include와 동작은 유사하나 용도는 다릅니다. include가 모듈의 메서드를 그대로 사용하기 위함이라면, prepend는 클래스의 기존 메서드를 꾸며주는 역할을 합니다. 이게 가능한 이유는, prepend된 모듈이 ancestors 배열상에서 원 클래스의 앞에 위치하기 때문입니다. 앞서 말씀드렸듯 메서드 호출은 ancesotrs의 앞에서부터 정의를 찾아나가기 때문에, prepend된 모듈의 메서드는 원 클래스의 메서드보다 우선순위가 높습니다. 그리고 여기에 다음 ancestor에서 메서드를 찾는 `super` 키워드를 조합하면, 해당 메서드의 앞이나 뒤에 우리가 원하는 동작을 추가할 수 있죠.
+`prepend`는 루비 2.0부터 도입된 mixin으로, include와 동작은 유사하나 용도는 다릅니다. include가 모듈의 메서드를 그대로 사용하기 위함이라면, prepend는 클래스의 기존 메서드를 꾸며주는 역할을 합니다. 이게 가능한 이유는, prepend된 모듈이 ancestors 배열상에서 원 클래스의 앞에 위치하기 때문입니다. 앞서 말씀드렸듯 메서드 호출은 ancesotrs의 앞에서부터 정의를 찾아나가기 때문에, prepend된 모듈의 메서드는 원 클래스의 메서드보다 우선순위가 높습니다. 그리고 여기에 다음 ancestor에서 메서드를 찾는 `super` 키워드를 조합하면, 해당 메서드의 앞이나 뒤에 우리가 원하는 동작을 추가할 수 있죠.
 
 ```ruby
 module MyModule
   def sum_of(numbers)
-    result = super # calls MyClass#sum
+    result = super # MyClass#sum_of 호출
     "sum_of(#{numbers.inspect}) finished: #{result.inspect}"
   end
 end
 
 class MyClass
   prepend MyModule
-  
+
   def sum_of(numbers)
     numbers.sum
   end
@@ -131,8 +131,10 @@ class MyClass
   extend MyModule
 end
 
-irb > MyClass.log # => log by MyModule
-irb > MyClass.ancestors # => [MyClass, Object, Kernel, BasicObject]
+irb > MyClass.log 
+# => log by MyModule
+irb > MyClass.ancestors 
+# => [MyClass, Object, Kernel, BasicObject]
 ```
 
 그런데 위 스니펫에서 보듯이 extend해도 `MyClass`의 ancestors에는 변화가 없습니다. 그러면 extend는 어떻게 클래스가 모듈의 메서드에 접근할 수 있게 해주는 것일까요? 애초에 클래스 메서드는 어떻게 실행되는 걸까요?
@@ -140,8 +142,10 @@ irb > MyClass.ancestors # => [MyClass, Object, Kernel, BasicObject]
 사실 루비에서 진정한 의미의 클래스 메서드는 존재하지 않습니다. 루비에서는 모든 것이 오브젝트이고, **클래스**도 다른 무언가의 인스턴스이며, 클래스 메서드도 결국은 인스턴스 메서드이기 때문입니다. 이에 대해 확실하게 이해하려면 싱글톤 클래스와 오브젝트 모델에 대해 알아야 합니다만, 지금은 "클래스 메서드는 싱글톤 클래스 안에 정의되고, 모듈을 extend하면 싱글톤 클래스가 확장된다"는 것만 기억해 둡시다.
 
 ```ruby
-irb > MyClass.singleton_class # => #<Class:MyClass>
-irb > MyClass.singleton_class.ancestors => [#<Class:MyClass>, MyModule, #<Class:Object>, #<Class:BasicObject>, Class, Module, Object, Kernel, BasicObject]
+irb > MyClass.singleton_class 
+# => #<Class:MyClass>
+irb > MyClass.singleton_class.ancestors 
+=> [#<Class:MyClass>, MyModule, #<Class:Object>, #<Class:BasicObject>, Class, Module, Object, Kernel, BasicObject]
 ```
 
 `MyClass`가 extend한 `MyModule`은 `MyClass.singleton_class` 의 ancestors로 존재합니다. 위치는 include와 유사하게 클래스의 싱글톤 클래스 다음이며, 싱글톤 클래스도 클래스이기 때문에 ancestors의 동작 방식도 같습니다. `MyClass.log`는 먼저 `#<Class:MyClass>`에서 메서드 정의를 찾아보고, 찾을 수 없으면 다음 ancestor인 `MyModule`에서 찾습니다.
@@ -168,10 +172,14 @@ class MyClass
   extend MyModule
 end
 
-irb > MyClass.included_method # => "included"
-irb > MyClass.extended_method # => "extended"
-irb > MyClass.new.included_method # => "included"
-irb > MyClass.new.extended_method # => "extended"
+irb > MyClass.included_method 
+# => "included"
+irb > MyClass.extended_method 
+# => "extended"
+irb > MyClass.new.included_method 
+# => "included"
+irb > MyClass.new.extended_method 
+# => "extended"
 ```
 
 보다시피 한 모듈을 두 번 mixin하는 것은 문법적으로는 가능하지만, 모듈의 메서드들이 클래스 메서드가 되면서 동시에 인스턴스 메서드도 되어버리기 때문에 우리가 원했던 상황과는 다릅니다. 
@@ -312,15 +320,15 @@ irb > MyClass.ancestors
 # => [MyClass, MyModule, UsefulModule, Object, Kernel, BasicObject]
 ```
 
-이 스니펫은 문제없이 실행되고, 의도대로 `MyClass`의 `has_many` 메서드가 호출됩니다(레일즈에서는 association 정의를 실행하게 되겠죠). 이게 가능한 이유는 `Concern`을 extend한 모듈의 모든 included 블록이, extend하지 않은 최초의 모듈에서 include된 것처럼 (즉 `UsefulModule`이 `MyClass`에 직접 include된 것처럼) 지연 실행되기 때문입니다. 좀 어려운데, 아무튼 개발자 입장에서는 `Concern`을 extend한 모듈을 다른 모듈에서도 안심하고 include할 수 있다는 걸 기억하시면 될 것 같습니다. 더 자세하게 알고 싶으신 분은 [소스코드](https://github.com/rails/rails/blob/94b5cd3a20edadd6f6b8cf0bdf1a4d4919df86cb/activesupport/lib/active_support/concern.rb)를 보셔도 좋겠네요. 
+이 스니펫은 문제없이 실행되고, 의도대로 `MyClass`의 `has_many` 메서드가 호출됩니다(레일즈에서는 association 정의를 실행하게 되겠죠). 이게 가능한 이유는 `Concern`을 extend한 모듈의 모든 included 블록이, extend하지 않은 최초의 모듈에서 include된 것처럼 (즉 `UsefulModule`이 `MyClass`에 직접 include된 것처럼) 지연 실행되기 때문입니다. 좀 어려운데, 아무튼 개발자 입장에서는 `Concern`을 extend한 모듈을 다른 모듈에서도 안심하고 include할 수 있다는 걸 기억하시면 될 것 같습니다. 더 자세하게 알고 싶으신 분은 [소스코드](https://github.com/rails/rails/blob/master/activesupport/lib/active_support/concern.rb)를 보셔도 좋겠네요. 
 
 ## 끝내며: Metaprogramming 맛보기  ##
 
 루비와 레일즈의 mixin에 대해 알아봤습니다. 되도록 간결하게 적고 싶었는데 그래도 상당히 길어졌네요. 사실 너무 길어질까봐 별다른 설명 없이 적어놓은 문장이 꽤 있는데요. 그중 이게 가장 중요한 것 같습니다.
 
->  루비에서는 모든 것이 오브젝트이고, '클래스'도 다른 무언가의 인스턴스이며
+>  루비에서는 모든 것이 오브젝트이고, **클래스**도 다른 무언가의 인스턴스이며
 
-루비에서는 모든 클래스는 `Class` 클래스의 인스턴스이고, `Class`와 `Module`도 `Class` 클래스의 인스턴스입니다.
+루비에서는 모든 클래스는 `Class` 클래스의 인스턴스이고, 심지어 `Class`와 `Module`도 `Class` 클래스의 인스턴스입니다.
 
 ```ruby
 irb > class MyClass; end
