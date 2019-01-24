@@ -1,11 +1,24 @@
 ---
-title: "오픈소스 스터디: AWS에 첫 PR을 날리기까지"
-tags: ["Open Source", "Study", "AWS Codedeploy Agent"]
+title: "오픈소스 초심자가 AWS에 무더기 PR을 올리기까지"
+tags: ["Open Source", "AWS Codedeploy Agent"]
 ---
 
-8월 3일부터 전 직장 동료이자 절친인 [김정훈님](https://wonderer80.github.io/), [이지민님](http://americanopeople.tistory.com/)과 함께 매주 수요일 저녁에 스터디를 하고 있다. 첫 10주동안에는 [제랄드 와인버그](https://en.wikipedia.org/wiki/Gerald_Weinberg) 옹의 [Quality Software Management](https://www.amazon.com/Quality-Software-Management-Systems-Thinking/dp/0932633722)(QSM)라는 고전을 함께 읽으며 토론하는 스터디였다. 그 다음 6주는 오픈소스 스터디였는데, [AWS CodeDeploy](https://aws.amazon.com/ko/codedeploy/)라는 아마존의 코드 배포 서비스의 버그 하나를 분석해서 [Pull Request](https://github.com/aws/aws-codedeploy-agent/pull/199)를 올리는 데 성공했다. 
+작년 8월 초부터 전 직장 동료이자 절친인 [김정훈님](https://wonderer80.github.io/), [이지민님](http://americanopeople.tistory.com/)과 함께 매주 수요일 저녁에 스터디를 하고 있습니다. 첫 이터레이션(10주)에는 [제랄드 와인버그](https://en.wikipedia.org/wiki/Gerald_Weinberg) 옹의 [Quality Software Management](https://www.amazon.com/Quality-Software-Management-Systems-Thinking/dp/0932633722)(QSM)라는 고전을 함께 읽으며 토론했습니다. 그 다음 이터레이션(12주)은 오픈소스 스터디였는데, 이 기간동안에 [AWS CodeDeploy](https://aws.amazon.com/ko/codedeploy/)라는 아마존의 코드 배포 서비스의 버그들을 분석해서 Pull Request 네 개를 올렸습니다.
 
-스터디 참여자 모두 오픈소스 프로젝트를 사용만 해봤지, 소스코드를 깊게 파보거나 제대로 기여를 해본 경험은 없었다. 그러나 좌충우돌하며 첫 PR을 날리게 되기까지는 꽤나 흥미로웠다. 다만 한 달이 지난 지금까지도 우리의 PR이 머지는 커녕 댓글 하나 달리지 않았다는 게 안타까울 따름이다.
+이 스터디에서 우리의 공통된 목표는 "오픈소스에 작은 기여를 해봄으로써 자신감을 얻기"였습니다. 스터디 참여자 모두 오픈소스 프로젝트를 사용만 해봤지, 소스코드를 깊게 분석해보거나 제대로 기여를 해본 경험은 이 때까지 없었기 때문이죠. 처음에는 AWS라는 이름값에 막연하게 떨기도 하고, 복잡한 소스코드를 보며 이해하기 어려워했습니다. 하지만 함께 고생하면서 좌충우돌 끝에 첫 PR을 날리고, 마침내 각자가 하나씩 버그를 맡아서 PR을 올리고 나니 정말 뿌듯했습니다. 첫 PR로부터 한달이 넘게 지났음에도 머지는커녕 댓글도 없다는 게 안타까울 따름이지만, 자신감을 얻는다는 목적은 충분히 달성했습니다.
+
+![image-20190122220718385](../images/image-20190122220718385.png)
+
+길진 않은 시간이었으나 스터디를 하며 이런 생각을 했습니다.
+
+- 유명한 오픈소스라도 생각보다 훨씬 더 결함이 많고, 코드 품질이 낮다.
+- 많은 사람들이 자신의 문제를 리포트하지만, 이들 중 문제의 원인을 파고드는 사람은 많지 않다.
+- 문제 원인이 밝혀졌더라도 직접 문제를 해결하려고 하는 사람은 더 적다.
+- 따라서, 끈기만 있다면 **초심자라도 충분히 의미있는 기여를 할 수 있다**.
+
+겨우 오픈소스 프로젝트 하나였지만, 스터디 과정에서 오픈소스가 막연한 무지의 대상이 아니라, **생각보다 별 거 아닌**, 우리가 이해할 수 있고 고칠 수도 있는 대상으로 변했다는 것이 기쁩니다. 예전에는 문제가 있을 때 구글링하거나 기존 이슈를 찾아보는 정도였다면, 이제는 이슈를 생성하기도 하고 여차하면 PR을 올릴 수 있게 됐습니다. 패러다임이 바뀐 셈이죠. 실제로 스터디 이후 각기 다른 프로젝트에 작은 PR 두 개([#1](https://github.com/rubyide/vscode-ruby/pull/407), [#2](https://github.com/jbodah/suggest_rb/pull/3))를 올려 둘 다 머지되는 쾌감을 누렸습니다. 
+
+개발자로서 지금까지 커뮤니티에게 받은 혜택을 돌려주고, 또 모르는 사람으로부터 감사와 칭찬을 받는다는 건 정말 즐거운 경험이더군요. 저는 [나는 어떻게 오픈소스 커뮤니티를 통해 성장했나](https://blog.cometkim.kr/posts/mattermost-contribution/how-i-grow-up-with-mattermost-community/)를 읽고 오픈소스 기여에 관심이 생기고, 또 스터디까지 하게 됐는데, 우리의 스터디 기록도 또 다른 누군가를 오픈소스 기여자로 만드는 단초가 되길 바랍니다.
 
 ### 주제 선정 ###
 
