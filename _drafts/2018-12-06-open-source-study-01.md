@@ -9,20 +9,20 @@ tags: ["Open Source", "AWS Codedeploy Agent"]
 
 ![image-20190122220718385](../images/image-20190122220718385.png)
 
-길진 않은 시간이었으나 스터디를 하며 이런 생각을 했습니다.
+길지 않은 시간이었으나 스터디를 하며 이런 생각을 했습니다.
 
 - 유명한 오픈소스라도 생각보다 훨씬 더 결함이 많고, 코드 품질이 낮다.
 - 많은 사람들이 자신의 문제를 리포트하지만, 이들 중 문제의 원인을 파고드는 사람은 많지 않다.
 - 문제 원인이 밝혀졌더라도 직접 문제를 해결하려고 하는 사람은 더 적다.
 - 따라서, 끈기만 있다면 **초심자라도 충분히 의미있는 기여를 할 수 있다**.
 
-겨우 오픈소스 프로젝트 하나였지만, 스터디 과정에서 오픈소스가 막연한 무지의 대상이 아니라, **생각보다 별 거 아닌**, 우리가 이해할 수 있고 고칠 수도 있는 대상으로 변했다는 것이 기쁩니다. 예전에는 문제가 있을 때 구글링하거나 기존 이슈를 찾아보는 정도였다면, 이제는 이슈를 생성하기도 하고 여차하면 PR을 올릴 수 있게 됐습니다. 패러다임이 바뀐 셈이죠. 실제로 스터디 이후 각기 다른 프로젝트에 작은 PR 두 개([#1](https://github.com/rubyide/vscode-ruby/pull/407), [#2](https://github.com/jbodah/suggest_rb/pull/3))를 올려 둘 다 머지되는 쾌감을 누렸습니다. 
+겨우 오픈소스 프로젝트 하나였지만, 스터디 과정에서 오픈소스가 막연한 무지의 대상이 아니라, **생각보다 별 거 아닌**, 우리가 이해할 수 있고 고칠 수도 있는 대상으로 변했다는 것이 기쁩니다. 예전에는 문제가 있을 때 구글링하거나 기존 이슈를 찾아보는 정도였다면, 이제는 이슈를 생성하기도 하고 여차하면 PR을 올릴 수 있게 됐습니다. 패러다임이 바뀐 셈이죠. 실제로 스터디 이후 각기 다른 프로젝트에 작은 PR 두 개([#1](https://github.com/rubyide/vscode-ruby/pull/407), [#2](https://github.com/jbodah/suggest_rb/pull/3))를 올려 둘 다 머지되는 기쁨을 누렸습니다. 
 
-개발자로서 지금까지 커뮤니티에게 받은 혜택을 돌려주고, 또 모르는 사람으로부터 감사와 칭찬을 받는다는 건 정말 즐거운 경험이더군요. 저는 [나는 어떻게 오픈소스 커뮤니티를 통해 성장했나](https://blog.cometkim.kr/posts/mattermost-contribution/how-i-grow-up-with-mattermost-community/)를 읽고 오픈소스 기여에 관심이 생기고, 또 스터디까지 하게 됐는데, 우리의 스터디 기록도 또 다른 누군가를 오픈소스 기여자로 만드는 단초가 되길 바랍니다.
+개발자로서 지금까지 커뮤니티에게 받은 혜택을 돌려주고, 또 모르는 사람으로부터 감사와 칭찬을 받는다는 건 정말 즐거운 경험이더군요. 저는 [나는 어떻게 오픈소스 커뮤니티를 통해 성장했나](https://blog.cometkim.kr/posts/mattermost-contribution/how-i-grow-up-with-mattermost-community/)를 읽고 오픈소스 기여에 관심이 생기고, 또 스터디까지 하게 됐는데, 우리의 스터디 기록도 또 다른 누군가를 오픈소스 기여자로 만드는 단초가 되면 좋겠네요.
 
 ### 주제 선정 ###
 
-QSM Volume 1-1 스터디를 끝내고 회고를 하며 다음 스터디는 어떤 주제로 할지 논의했다. 여러가지 후보가 있었는데:
+QSM Volume 1-1 스터디를 끝내고 회고를 하며 다음 스터디는 어떤 주제로 할지 논의했습니다다. 당시 여러가지 후보가 있었는데:
 
 1. QSM, 또는 와인버그의 다른 책을 비슷한 방식으로 이어서 읽기
 2. 백엔드 기술 전문성을 높이는 활동 (커리어 선택의 폭 넓히기)
@@ -33,13 +33,13 @@ QSM Volume 1-1 스터디를 끝내고 회고를 하며 다음 스터디는 어�
 7. 강의자료, 학습자료 만들기
 8. **기존의 오픈소스 프로젝트 코드 분석해서 코멘트 남기고 PR 올려보기. + 이슈 답변 달아주기**
 
-카페에서 즐겁게 얘기만 하다 보니 정확히 여기서 어떻게 오픈소스로 결정됐는지는 기억나지 않지만, 책으로 스터디를 해봤으니 다른 쪽으로 스터디를 해보자는 것에는 빠르게 합의했던 것 같다. 특히 모두 백엔드 개발자였기에, 백엔드 프로그래밍과 관련된 것으로 해보고 싶었다.
+카페에서 즐겁게 수다만 떨다 보니 어쩌다가 오픈소스로 결정됐는지는 잘 기억나지 않지만, 책으로 스터디를 해봤으니 이번에는 다른 쪽으로 해보자는 것에는 빠르게 합의했던 것 같습니다. 특히 모두 백엔드 개발자였기에, 백엔드 프로그래밍과 관련된 것으로 해보고 싶었습니다.
 
 ### 대상 프로젝트 선정 ###
 
-각자 몇가지 github 저장소를 후보로 가져왔다. [elasticsearch](https://github.com/elastic/elasticsearch), [AWS code deploy agent](https://github.com/aws/aws-codedeploy-agent), [rspec](https://github.com/rspec/rspec) , [redis](https://github.com/antirez/redis), [git](https://github.com/git/git), [pytest](https://github.com/pytest-dev/pytest), [redash](https://github.com/getredash/redash), [django oscar](https://github.com/django-oscar/django-oscar). 스터디 참여자들이 주로 다뤄왔던 언어가 Ruby였던 관계로, C로 구현된 프로젝트는 모두 순식간에 제외되었다. 그래도 여전히 후보가 많아서 선택하기 어려웠는데, 선택의 폭을 좁혀준 것은 이 기준이었다. `커밋 수가 가장 적은 프로젝트`. 
+그 다음 주에는 각자 몇가지 github 저장소를 후보로 가져왔습니다. 후보는 [elasticsearch](https://github.com/elastic/elasticsearch), [AWS code deploy agent](https://github.com/aws/aws-codedeploy-agent), [rspec](https://github.com/rspec/rspec) , [redis](https://github.com/antirez/redis), [git](https://github.com/git/git), [pytest](https://github.com/pytest-dev/pytest), [redash](https://github.com/getredash/redash), [django oscar](https://github.com/django-oscar/django-oscar) 정도가 있었고요. 스터디 참여자들이 주로 다뤄왔던 언어가 Ruby였던 관계로, C로 구현된 프로젝트는 모두 순식간에 제외되었습니다. 그래도 여전히 후보가 많아서 선택하기 어려웠는데, 선택의 폭을 좁혀준 것은 이 기준이었습니다. "**커밋 수가 가장 적은 프로젝트**".
 
-우리는 실제 문제를 푸는 데 기여하고 싶었고, 너무 많은 시간을 투자하기는 원치 않았기에, 레거시가 적고 파악해야 하는 코드의 양이 적은 프로젝트를 선택하고자 했다. `AWS code deploy agent`는 커밋 수도 적고 역사도 깊지 않았으며, 최근까지도 활발하게 개발이 이루어지고 있었다. 소스코드도 Ruby로 되어있었고 우리 모두 AWS에 관심이 있었으니 훌륭한 선택이라고 생각했다. (~~최근까지도 활발하게 개발이 이루어지고 있었다~~ → 지난 몇 달간 아무 반응 없이 방치된 PR도 많다는 사실은 몰랐다.)
+우리는 실제 문제를 푸는 데 기여하고 싶었지만, 동시에 너무 많은 시간을 투자하기는 원치 않았기에(스터디에 너무 많은 시간을 투자해야 하면 부담이 커지면서 지속하기 어려워진다는 것을 다들 알고 있었습니다), 레거시가 적고 파악해야 하는 코드 양이 적은 프로젝트를 선택하고자 했습니다. [AWS code deploy agent](https://github.com/aws/aws-codedeploy-agent)는 커밋 수도 적고 역사도 깊지 않았으며, (작년 10월까지만 해도) 개발이 활발하게 이루어지고 있는 것으로 보였습니다. 게다가 소스코드도 Ruby로 되어있었고, 우리 모두 AWS에 관심이 있었으니 훌륭한 선택이라고 생각했습니다. (이때는 지난 몇 달간 아무 반응 없이 방치된 PR도 많다는 현실을 몰랐죠...)
 
 ### 스터디에서 기대하는 바 공유 ###
 
